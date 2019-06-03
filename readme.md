@@ -1,8 +1,6 @@
 ## About G.T.MusicBooking
 
 This is a website for artists managers. It is based on Laravel 5.8 framework.
-## Learning Laravel
-
 
 ## Installation via composer
 
