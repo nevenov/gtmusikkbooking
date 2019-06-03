@@ -14,10 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
 Auth::routes(['verify' => true, 'register' => false]);
 
+
+//Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin', 'HomeController@index')->name('admin');
-Route::get('/home', 'HomeController@index')->name('home');
+
 
 Route::group(['middleware' => 'auth'], function () {
 	Route::resource('user', 'UserController', ['except' => ['show']]);
