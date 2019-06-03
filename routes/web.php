@@ -14,9 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Auth::routes([ 'register' => false ]);
+
+//Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin', 'HomeController@index')->name('admin');
 
 Route::group(['middleware' => 'auth'], function () {
