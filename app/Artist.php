@@ -46,5 +46,12 @@ class Artist extends Model
     }
 
 
+    public function photo(){
+
+        return $this->hasOne('App\Photo');
+
+    }
+
+
 
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Artist;
+use App\Photo;
 use Illuminate\Http\Request;
 
 class AdminArtistsController extends Controller
@@ -41,7 +42,17 @@ class AdminArtistsController extends Controller
         //
         $input = $request->all();
 
-        $input['photo_id'] = 1;
+        //$input['photo_id'] = 1;
+        if($file = $request->file('photo_id')){
+
+            $name = time() . $file->getClientOriginalName();
+
+            $file->move('images', $name);
+
+            $photo = Photo::create(['file'=>$name]);
+
+            $input['photo_id'] = $photo->id;
+        }
 
         Artist::create($input);
 
