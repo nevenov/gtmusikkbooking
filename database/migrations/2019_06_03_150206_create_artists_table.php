@@ -18,6 +18,7 @@ class CreateArtistsTable extends Migration
             $table->integer('user_id')->nullable();
             $table->integer('category_id')->nullable()->index();
             $table->integer('photo_id')->nullable()->index();
+            $table->string('status');
             $table->string('title');
             $table->string("slug");
             $table->text('body');

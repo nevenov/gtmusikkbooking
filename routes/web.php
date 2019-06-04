@@ -35,5 +35,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('admin/artists/create', 'AdminArtistsController@create')->name('admin.artists.create');
 
+    Route::post('admin/artists', 'AdminArtistsController@store')->name('admin.artists.store');
+
 });
 
