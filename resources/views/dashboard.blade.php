@@ -5,7 +5,7 @@
     
     <div class="container-fluid mt--7">
 
-        <div class="row mt-5">
+        <div class="row mt-2">
             <div class="col-xl-12 mb-5 mb-xl-0">
                 <div class="card shadow">
                     <div class="card-header border-0">
@@ -14,7 +14,7 @@
                                 <h3 class="mb-0">Последно добавени артисти</h3>
                             </div>
                             <div class="col text-right">
-                                <a href="#!" class="btn btn-sm btn-primary">Виж всички</a>
+                                <a href="{{ route('admin.artists.index') }}" class="btn btn-sm btn-primary">Виж всички</a>
                             </div>
                         </div>
                     </div>
@@ -23,55 +23,25 @@
                         <table class="table align-items-center table-flush">
                             <thead class="thead-light">
                                 <tr>
+                                    <th scope="col">Снимка</th>
                                     <th scope="col">Име</th>
                                     <th scope="col">Група</th>
-                                    <th scope="col">Преглеждания</th>
                                     <th scope="col">Добавен на</th>
                                 </tr>
                             </thead>
                             <tbody>
+
+                                @foreach($artists as $artist)
+
                                 <tr>
-                                    <th scope="row">
-                                        Alice Cooper
-                                    </th>
-                                    <td>
-                                        Rock'n'Roll
-                                    </td>
-                                    <td>
-                                        340
-                                    </td>
-                                    <td>
-                                        20.06.2019
-                                    </td>
+                                    <td>{{ $artist->photo_id }}</td>
+                                    <th scope="row">{{ $artist->title }}</th>
+                                    <td>{{ $artist->category_id }}</td>
+                                    <td>{{ $artist->created_at ? $artist->created_at->diffForHumans() : $artist->created_at }}</td>
                                 </tr>
-                                <tr>
-                                    <th scope="row">
-                                        Alice Cooper
-                                    </th>
-                                    <td>
-                                        Rock'n'Roll
-                                    </td>
-                                    <td>
-                                        340
-                                    </td>
-                                    <td>
-                                        20.06.2019
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">
-                                        Alice Cooper
-                                    </th>
-                                    <td>
-                                        Rock'n'Roll
-                                    </td>
-                                    <td>
-                                        340
-                                    </td>
-                                    <td>
-                                        20.06.2019
-                                    </td>
-                                </tr>
+
+                                @endforeach
+
                             </tbody>
                         </table>
                     </div>

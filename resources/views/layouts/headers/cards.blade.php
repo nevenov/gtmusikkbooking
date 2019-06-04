@@ -1,7 +1,11 @@
-<div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
+<div class="header bg-gradient-primary pb-9 pt-5 pt-md-7">
     <div class="container-fluid">
         <div class="header-body">
             <!-- Card stats -->
+
+            @if (\Route::current()->getName() == 'admin')
+
+
             <div class="row">
 
                 <div class="col-xl-4 col-lg-6">
@@ -9,7 +13,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col">
-                                    <a href="#"><h5 class="card-title text-uppercase text-muted mb-0">Артисти</h5></a>
+                                    <a href="{{ route('admin.artists.index') }}"><h5 class="card-title text-uppercase text-muted mb-0">Артисти</h5></a>
                                     <span class="h2 font-weight-bold mb-0">124</span>
                                 </div>
                                 <div class="col-auto">
@@ -27,7 +31,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col">
-                                    <a href="#"><h5 class="card-title text-uppercase text-muted mb-0">Групи</h5></a>
+                                    <a href="{{ route('admin.artists.index') }}"><h5 class="card-title text-uppercase text-muted mb-0">Групи</h5></a>
                                     <span class="h2 font-weight-bold mb-0">12</span>
                                 </div>
                                 <div class="col-auto">
@@ -41,6 +45,9 @@
                 </div>
 
             </div>
+
+            @endif
+
         </div>
     </div>
 </div>

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Artist;
+
 class HomeController extends Controller
 {
     /**
@@ -21,6 +23,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+
+        $artists = Artist::all();
+
+        return view('dashboard', compact('artists'));
     }
 }

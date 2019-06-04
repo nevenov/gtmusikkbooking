@@ -15,10 +15,11 @@ class CreateArtistsTable extends Migration
     {
         Schema::create('artists', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('user_id')->unsigned()->index();
-            $table->integer('category_id')->unsigned()->index();
-            $table->integer('photo_id')->unsigned()->index();
+            $table->integer('user_id')->nullable();
+            $table->integer('category_id')->nullable()->index();
+            $table->integer('photo_id')->nullable()->index();
             $table->string('title');
+            $table->string("slug");
             $table->text('body');
             $table->string('audio1');
             $table->string('audio2');
