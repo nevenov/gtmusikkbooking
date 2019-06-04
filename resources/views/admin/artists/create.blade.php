@@ -13,7 +13,7 @@
                                 <h3 class="mb-0">{{ __('Добави артист') }}</h3>
                             </div>
                             <div class="col-4 text-right">
-                                <a href="{{ route('admin.artists.index') }}" class="btn btn-sm btn-primary">{{ __('Обратно') }}</a>
+                                <a href="{{ route('admin.artists.index') }}" class="btn btn-sm btn-primary">{{ __('Всички артисти') }}</a>
                             </div>
                         </div>
                     </div>
