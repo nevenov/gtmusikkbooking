@@ -50,7 +50,7 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-10{{ $errors->has('title') ? ' has-danger' : '' }}">
                                         <label class="form-control-label" for="input-title">{{ __('Име') }}</label>
-                                        <input type="text" name="title" id="input-title" class="form-control form-control-alternative{{ $errors->has('title') ? ' is-invalid' : '' }}" placeholder="{{ __('Име на артиста') }}" value="{{ old('title') }}" required autofocus>
+                                        <input type="text" name="title" id="input-title" class="form-control{{ $errors->has('title') ? ' is-invalid' : '' }}" placeholder="{{ __('Име на артиста') }}" value="{{ old('title') }}" required autofocus>
 
                                         @if ($errors->has('title'))
                                             <span class="invalid-feedback" role="alert">
@@ -61,16 +61,45 @@
                                 </div>
 
 
-                                <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="customFile">
+                                <div class="custom-file col-md-8">
+                                    <input type="file" name="photo_id" class="custom-file-input" id="customFile">
                                     <label class="custom-file-label" for="customFile">Избери снимка</label>
                                 </div>
 
 
                                 <div class="form-group pt-4">
                                     <label for="body">Описание:</label>
-                                    <textarea name="body" class="form-control" rows="5" id="body" placeholder="Описание на артиста ..."></textarea>
+                                    <textarea name="body" class="form-control" rows="5" id="body" placeholder="Описание на артиста ..." value="{{ old('body') }}"></textarea>
                                 </div>
+
+
+
+                                <div class="form-row">
+                                    <div class="form-group col-md-8">
+                                        <label class="form-control-label" for="input-video1">{{ __('Youtube demo') }}</label>
+                                        <input type="text" name="video1" id="input-reference1" class="form-control" placeholder="{{ __('Напр.: https://www.youtube.com/watch?v=zVOuRQPPdoo') }}" value="{{ old('video1') }}">
+                                    </div>
+                                </div>
+
+
+                                <div class="custom-file col-md-8">
+                                    <input type="file" name="audio1" class="custom-file-input" id="customFile1">
+                                    <label class="custom-file-label" for="customFile1">Избери аудио файл за демо</label>
+                                </div>
+
+
+                                <div class="form-row pt-4">
+                                    <div class="form-group col-md-5">
+                                        <label class="form-control-label" for="input-reference1">{{ __('Референции') }}</label>
+                                        <input type="text" name="reference1" id="input-reference1" class="form-control" placeholder="{{ __('Референция 1') }}" value="{{ old('reference1') }}">
+                                    </div>
+
+                                    <div class="form-group col-md-5 offset-1">
+                                        <label class="form-control-label" for="input-reference2"> &nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                        <input type="text" name="reference2" id="input-reference2" class="form-control" placeholder="{{ __('Референция 2') }}" value="{{ old('reference2') }}">
+                                    </div>
+                                </div>
+
 
                                 <div class="text-left">
                                     <button type="submit" class="btn btn-success mt-4">{{ __('Запиши') }}</button>
@@ -92,7 +121,7 @@
 
     <script>
         $( document ).ready(function() {
-            // Add the following code if you want the name of the file appear on select
+            // The name of the file appear on select
             $(".custom-file-input").on("change", function() {
                 var fileName = $(this).val().split("\\").pop();
                 $(this).siblings(".custom-file-label").addClass("selected").html(fileName);

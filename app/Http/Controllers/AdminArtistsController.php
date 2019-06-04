@@ -39,6 +39,15 @@ class AdminArtistsController extends Controller
     public function store(Request $request)
     {
         //
+        $input = $request->all();
+
+        $input['photo_id'] = 1;
+
+        Artist::create($input);
+
+        return redirect('/admin/artists')->with('status', 'Артистът е създаден успешно.');;
+
+        //dd($input);
     }
 
     /**
