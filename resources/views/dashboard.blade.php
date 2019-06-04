@@ -37,7 +37,7 @@
                                     <td>{{ $artist->photo_id }}</td>
                                     <th scope="row">{{ $artist->title }}</th>
                                     <td>{{ $artist->category_id }}</td>
-                                    <td>{{ $artist->created_at ? $artist->created_at->diffForHumans() : $artist->created_at }}</td>
+                                    <td>{{ \Carbon\Carbon::parse($artist->created_at)->format('d M Y') }}</td>
                                 </tr>
 
                                 @endforeach

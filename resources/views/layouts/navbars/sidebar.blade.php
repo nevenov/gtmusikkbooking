@@ -67,7 +67,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#navbar-examples" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-examples">
                         <i class="fas fa-music" style="color: #f4645f;"></i>
-                        <span class="nav-link-text" style="color: #f4645f;">{{ __('Артисти') }}</span>
+                        <span class="nav-link-text">{{ __('Артисти') }}</span>
                     </a>
 
                     <div class="collapse" id="navbar-examples">
@@ -95,7 +95,7 @@
 
                 <li class="nav-item">
                     <a class="nav-link" href="#">
-                        <i class="fas fa-users"></i>{{ __('Групи') }}
+                        <i class="fas fa-users" style="color: #4c4c4c;"></i>{{ __('Групи') }}
                     </a>
                 </li>
 

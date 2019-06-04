@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Artist;
 use Illuminate\Http\Request;
 
 class AdminArtistsController extends Controller
@@ -14,7 +15,8 @@ class AdminArtistsController extends Controller
     public function index()
     {
         //
-        return view('admin.artists.index');
+        $artists = Artist::orderBy('created_at', 'desc')->paginate(2);
+        return view('admin.artists.index', compact('artists'));
     }
 
     /**
