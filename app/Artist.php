@@ -48,7 +48,19 @@ class Artist extends Model
 
     public function photo(){
 
-        return $this->hasOne('App\Photo');
+        return $this->belongsTo('App\Photo');
+
+    }
+
+    public function category(){
+
+        return $this->belongsTo('App\Category');
+
+    }
+
+    public function photoPlaceholder(){
+
+        return "https://i.pravatar.cc/80?img=55";
 
     }
 

@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Artist;
-use App\Photo;
 use Illuminate\Http\Request;
 
-class AdminArtistsController extends Controller
+class AdminCategoriesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +14,6 @@ class AdminArtistsController extends Controller
     public function index()
     {
         //
-        $artists = Artist::orderBy('created_at', 'desc')->paginate(20);
-        return view('admin.artists.index', compact('artists'));
     }
 
     /**
@@ -28,7 +24,6 @@ class AdminArtistsController extends Controller
     public function create()
     {
         //
-        return view('admin.artists.create');
     }
 
     /**
@@ -40,25 +35,6 @@ class AdminArtistsController extends Controller
     public function store(Request $request)
     {
         //
-        $input = $request->all();
-
-        //$input['photo_id'] = 1;
-        if($file = $request->file('photo_id')){
-
-            $name = time() . $file->getClientOriginalName();
-
-            $file->move('images', $name);
-
-            $photo = Photo::create(['file'=>$name]);
-
-            $input['photo_id'] = $photo->id;
-        }
-
-        Artist::create($input);
-
-        return redirect('/admin/artists')->with('status', 'Артистът е създаден успешно.');;
-
-        //dd($input);
     }
 
     /**

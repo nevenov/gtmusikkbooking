@@ -33,18 +33,20 @@
                         <table class="table align-items-center table-flush">
                             <thead class="thead-light">
                             <tr>
+                                <th scope="col">{{ __('Снимка') }}</th>
                                 <th scope="col">{{ __('Име') }}</th>
                                 <th scope="col">{{ __('Група') }}</th>
-                                <th scope="col">{{ __('Създаден на') }}</th>
+                                <th scope="col">{{ __('Добавен на') }}</th>
                                 <th scope="col"></th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach ($artists as $artist)
                                 <tr>
+                                    <td><img height="50" src="{{ $artist->photo ? $artist->photo->file : $artist->photoPlaceholder() }}" alt=""></td>
                                     <th scope="col">{{ $artist->title }}</th>
                                     <td>{{ $artist->category_id }}</td>
-                                    <td>{{ $artist->created_at->format('d/m/Y H:i') }}</td>
+                                    <td>{{ $artist->created_at->format('d M Y H:i') }}</td>
                                     <td class="text-right">
                                         <div class="dropdown">
                                             <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
