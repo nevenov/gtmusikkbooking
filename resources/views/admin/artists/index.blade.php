@@ -43,24 +43,21 @@
                             <tbody>
                             @foreach ($artists as $artist)
                                 <tr>
-                                    <td><img height="50" src="{{ $artist->photo ? $artist->photo->file : $artist->photoPlaceholder() }}" alt=""></td>
-                                    <th scope="col">{{ $artist->title }}</th>
+                                    <td><img height="50" src="{{ $artist->photo ? $artist->photo->file : $artist->photoPlaceholder() }}" alt="{{ $artist->title }}"></td>
+                                    <th scope="col"><a href="{{ route('admin.artists.edit', $artist->id) }}">{{ $artist->title }}</a></th>
                                     <td>{{ $artist->category_id }}</td>
                                     <td>{{ $artist->created_at->format('d M Y H:i') }}</td>
                                     <td class="text-right">
                                         <div class="dropdown">
-                                            <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <a class="btn btn-sm btn-icon-only text-light" href="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 <i class="fas fa-ellipsis-v"></i>
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
 
-                                                {{--<form action="{{ route('artist.destroy', $artist) }}" method="post">--}}
-                                                <form action="" method="post">
+                                                <form action="{{ route('admin.artists.destroy', $artist->id) }}" method="post">
                                                     @csrf
                                                     @method('delete')
-
-                                                    {{--<a class="dropdown-item" href="{{ route('artist.edit', $artist) }}">{{ __('Edit') }}</a>--}}
-                                                    <a class="dropdown-item" href="">{{ __('Edit') }}</a>
+                                                    <a class="dropdown-item" href="{{ route('admin.artists.edit', $artist->id) }}">{{ __('Edit') }}</a>
                                                     <button type="button" class="dropdown-item" onclick="confirm('{{ __("Are you sure you want to delete this user?") }}') ? this.parentElement.submit() : ''">
                                                         {{ __('Delete') }}
                                                     </button>

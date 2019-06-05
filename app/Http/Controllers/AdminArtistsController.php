@@ -42,7 +42,6 @@ class AdminArtistsController extends Controller
         //
         $input = $request->all();
 
-        //$input['photo_id'] = 1;
         if($file = $request->file('photo_id')){
 
             $name = time() . $file->getClientOriginalName();
@@ -56,7 +55,7 @@ class AdminArtistsController extends Controller
 
         Artist::create($input);
 
-        return redirect('/admin/artists')->with('status', 'Артистът е създаден успешно.');;
+        return redirect('/admin/artists')->with('status', 'Артистът е създаден успешно.');
 
         //dd($input);
     }
@@ -81,6 +80,10 @@ class AdminArtistsController extends Controller
     public function edit($id)
     {
         //
+        $artist = Artist::findOrFail($id);
+
+        return view('admin.artists.edit', compact('artist'));
+
     }
 
     /**
@@ -93,6 +96,46 @@ class AdminArtistsController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $artist = Artist::findOrFail($id);
+
+        $input = $request->all();
+
+        if($file = $request->file('photo_id')){
+
+            $name = time() . $file->getClientOriginalName();
+
+            $file->move('images', $name);
+
+//            $photo = Photo::find($artist->photo_id);
+
+            //dd($photo);
+
+            if($artist->photo) {
+
+                unlink(public_path() . $artist->photo->file);
+
+                $artist->photo->update(['file'=>$name]);
+
+                $input['photo_id'] = $artist->photo->id;
+
+            } else {
+
+                $photo = Photo::create(['file'=>$name]);
+
+                $input['photo_id'] = $photo->id;
+
+            }
+
+
+
+        }
+
+        $artist->where('id', $id)->first()->update($input);
+
+        return redirect('/admin/artists')->with('status', 'Артистът е редактиран успешно. ');
+
+//        dd($request->all());
+
     }
 
     /**
@@ -104,5 +147,15 @@ class AdminArtistsController extends Controller
     public function destroy($id)
     {
         //
+        $artist = Artist::findOrFail($id);
+
+        if($artist->photo){
+            unlink(public_path() . $artist->photo->file);
+        }
+
+        $artist->delete();
+
+        return redirect('/admin/artists')->with('status', 'Артистът е изтрит успешно. ');
     }
+
 }

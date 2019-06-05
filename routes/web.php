@@ -29,13 +29,33 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
 
 
-	Route::resource('admin/artists', 'AdminArtistsController');
+//	  Route::resource('admin/artists', 'AdminArtistsController');
+//
+//    Route::get('admin/artists', 'AdminArtistsController@index')->name('admin.artists.index');
+//
+//    Route::get('admin/artists/create', 'AdminArtistsController@create')->name('admin.artists.create');
+//
+//    Route::post('admin/artists', 'AdminArtistsController@store')->name('admin.artists.store');
+//
+//    Route::get('admin/artists/{id}/edit', 'AdminArtistsController@edit')->name('admin.artists.edit');
 
-    Route::get('admin/artists', 'AdminArtistsController@index')->name('admin.artists.index');
+    //this renaming of routes is the same as above
+    Route::resource('admin/artists', 'AdminArtistsController', ['names'=>[
 
-    Route::get('admin/artists/create', 'AdminArtistsController@create')->name('admin.artists.create');
+        'index'=>'admin.artists.index',
+        'create'=>'admin.artists.create',
+        'store'=>'admin.artists.store',
+        'show'=>'admin.artists.show',
+        'edit'=>'admin.artists.edit',
+        'update'=>'admin.artists.update',
+        'destroy'=>'admin.artists.destroy'
 
-    Route::post('admin/artists', 'AdminArtistsController@store')->name('admin.artists.store');
+    ]]);
+
+
+
+    Route::resource('admin/photos', 'AdminPhotosController');
+
 
 });
 

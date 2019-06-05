@@ -3,6 +3,10 @@
 @section('content')
     @include('layouts.headers.cards')
 
+
+    @include('includes.tinyeditor')
+
+
     <div class="container-fluid mt--7">
         <div class="row">
             <div class="col-xl-12 order-xl-1">
@@ -21,7 +25,7 @@
                         <form method="post" action="{{ route('admin.artists.store') }}" enctype="multipart/form-data">
                             @csrf
 
-                            <h6 class="heading-small text-muted mb-4">{{ __('Попълни информация за артиста') }}</h6>
+                            <h6 class="heading-small text-muted mb-4">{{ __('Попълни информацията за артиста и натисни бутон "Save"') }}</h6>
                             <div class="pl-lg-4">
 
 
@@ -48,15 +52,9 @@
 
 
                                 <div class="form-row">
-                                    <div class="form-group col-md-10{{ $errors->has('title') ? ' has-danger' : '' }}">
+                                    <div class="form-group col-md-10">
                                         <label class="form-control-label" for="input-title">{{ __('Име') }}</label>
-                                        <input type="text" name="title" id="input-title" class="form-control{{ $errors->has('title') ? ' is-invalid' : '' }}" placeholder="{{ __('Име на артиста') }}" value="{{ old('title') }}" required autofocus>
-
-                                        @if ($errors->has('title'))
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $errors->first('title') }}</strong>
-                                            </span>
-                                        @endif
+                                        <input type="text" name="title" id="input-title" class="form-control" placeholder="{{ __('Име на артиста') }}" value="{{ old('title') }}" required autofocus>
                                     </div>
                                 </div>
 
@@ -69,7 +67,7 @@
 
                                 <div class="form-group pt-4">
                                     <label for="body">Описание:</label>
-                                    <textarea name="body" class="form-control" rows="5" id="body" placeholder="Описание на артиста ..." value="{{ old('body') }}"></textarea>
+                                    <textarea name="body" class="form-control" rows="18" id="body" placeholder="Описание на артиста ...">{{ old('body') }}</textarea>
                                 </div>
 
 
@@ -102,7 +100,7 @@
 
 
                                 <div class="text-left">
-                                    <button type="submit" class="btn btn-success mt-4">{{ __('Запиши') }}</button>
+                                    <button type="submit" class="btn btn-success mt-4">{{ __('Save') }}</button>
                                 </div>
 
 

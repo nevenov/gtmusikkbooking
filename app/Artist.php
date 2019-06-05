@@ -16,6 +16,7 @@ class Artist extends Model
         'user_id',
         'category_id',
         'photo_id',
+        'status',
         'title',
         'body',
         'audio1',

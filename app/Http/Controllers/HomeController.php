@@ -24,7 +24,7 @@ class HomeController extends Controller
     public function index()
     {
 
-        $artists = Artist::latest()->take(3)->get();
+        $artists = Artist::latest('updated_at')->take(3)->get();
 
         return view('dashboard', compact('artists'));
     }
