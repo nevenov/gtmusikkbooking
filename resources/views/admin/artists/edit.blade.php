@@ -22,13 +22,15 @@
                     </div>
                     <div class="card-body">
 
-                        <div>
-
-                            <form action="{{ route('photos.destroy',$artist->id) }}" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Delete</button>
-                            </form>
+                        <div class="col-12">
+                            @if (session('status'))
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                    {{ session('status') }}
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                            @endif
                         </div>
 
                         <form method="post" action="{{ route('admin.artists.update', $artist->id) }}" enctype="multipart/form-data">
@@ -69,25 +71,31 @@
                                 </div>
 
 
-                                <div class="row">
+                                {{--<div class="form-row">--}}
+                                @if($artist->photo)
+                                <div class="col-md-4 float-left">
+                                    <img class="mw-100 img-responsive" src="{{ $artist->photo->file }}" alt="">
+
+                                </div>
+                                @endif
+                                <div class="custom-file col-md-6">
+                                    <input type="file" name="photo_id" class="custom-file-input" id="customFile">
+                                    <label class="custom-file-label" for="customFile">Избери снимка</label>
                                     @if($artist->photo)
-                                    <div class="col-md-4">
-                                        <img class="mw-100 img-responsive" src="{{ $artist->photo->file }}" alt="">
+                                    <div class="pt-4">
+                                        <a href="{{ route('admin.photos.delete', $artist->id) }}" class="btn btn-danger btn-sm" onclick="return confirm('Сигурен ли сте, че искате да изтриете снимката на този артист?')">Изтрий снимката</a>
                                     </div>
                                     @endif
-                                    <div class="custom-file col-md-6">
-                                        <input type="file" name="photo_id" class="custom-file-input" id="customFile">
-                                        <label class="custom-file-label" for="customFile">Избери снимка</label>
-                                    </div>
                                 </div>
+                                {{--</div>--}}
 
-
+                                <div class="clearfix"></div>
 
 
 
                                 <div class="form-group pt-4">
                                     <label for="body">Описание:</label>
-                                    <textarea name="body" class="form-control" rows="18" id="body" placeholder="Описание на артиста ...">{{ $artist->body }}</textarea>
+                                    <textarea name="body" class="form-control" rows="25" id="body" placeholder="Описание на артиста ...">{{ $artist->body }}</textarea>
                                 </div>
 
 

@@ -1,4 +1,5 @@
 <script src="//cdn.tinymce.com/4/tinymce.min.js?apiKey=3bgl4csabacsi664znerfak8sj42trm8plz0z4et75yxxq9z"></script>
+{{--<script src="https://cdn.tiny.cloud/1/3bgl4csabacsi664znerfak8sj42trm8plz0z4et75yxxq9z/tinymce/5/tinymce.min.js"></script>--}}
 
 <script>
     var editor_config = {

@@ -67,7 +67,7 @@
 
                                 <div class="form-group pt-4">
                                     <label for="body">Описание:</label>
-                                    <textarea name="body" class="form-control" rows="18" id="body" placeholder="Описание на артиста ...">{{ old('body') }}</textarea>
+                                    <textarea name="body" class="form-control" rows="25" id="body" placeholder="Описание на артиста ...">{{ old('body') }}</textarea>
                                 </div>
 
 

@@ -36,7 +36,9 @@
                                 <th scope="col">{{ __('Снимка') }}</th>
                                 <th scope="col">{{ __('Име') }}</th>
                                 <th scope="col">{{ __('Група') }}</th>
+                                <th scope="col">{{ __('Статус') }}</th>
                                 <th scope="col">{{ __('Добавен на') }}</th>
+                                <th scope="col">{{ __('Редактиран на') }}</th>
                                 <th scope="col"></th>
                             </tr>
                             </thead>
@@ -46,7 +48,12 @@
                                     <td><img height="50" src="{{ $artist->photo ? $artist->photo->file : $artist->photoPlaceholder() }}" alt="{{ $artist->title }}"></td>
                                     <th scope="col"><a href="{{ route('admin.artists.edit', $artist->id) }}">{{ $artist->title }}</a></th>
                                     <td>{{ $artist->category_id }}</td>
+                                    <td><span class="{{ $artist->status=='active' ? 'text-success' : 'text-danger' }}">
+                                        {{ $artist->status=='active' ? '' : 'не' }}активен
+                                        </span>
+                                    </td>
                                     <td>{{ $artist->created_at->format('d M Y H:i') }}</td>
+                                    <td>{{ $artist->updated_at->format('d M Y H:i') }}</td>
                                     <td class="text-right">
                                         <div class="dropdown">
                                             <a class="btn btn-sm btn-icon-only text-light" href="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

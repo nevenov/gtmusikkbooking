@@ -11,6 +11,8 @@
 |
 */
 
+use App\Artist;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -53,8 +55,21 @@ Route::group(['middleware' => 'auth'], function () {
     ]]);
 
 
-
+    // route for admin/photos use AdminPhotosController
     Route::resource('admin/photos', 'AdminPhotosController');
+
+    // this route is used to delete photo in Artist -> Edit view
+    Route::get('admin/photos/{id}/delete', ['uses' => 'AdminPhotosController@destroy', 'as' => 'admin.photos.delete']);
+
+
+
+    // View Composer
+//    View::composer(['*'], function ($view){
+//
+//        $artistsall = Artist::all();
+//        $view->with('artistsall', $artistsall);
+//
+//    });
 
 
 });

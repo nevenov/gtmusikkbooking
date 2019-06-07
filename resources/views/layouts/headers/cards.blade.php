@@ -14,7 +14,7 @@
                             <div class="row">
                                 <div class="col">
                                     <a href="{{ route('admin.artists.index') }}"><h5 class="card-title text-uppercase text-muted mb-0">Артисти</h5></a>
-                                    <span class="h2 font-weight-bold mb-0">124</span>
+                                    <span class="h2 font-weight-bold mb-0">{{ count($artistsall) }}</span>
                                 </div>
                                 <div class="col-auto">
                                     <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
