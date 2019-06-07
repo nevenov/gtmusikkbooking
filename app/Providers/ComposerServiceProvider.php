@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Artist;
+use App\Category;
 use Illuminate\Support\ServiceProvider;
 
 class ComposerServiceProvider extends ServiceProvider
@@ -29,6 +30,9 @@ class ComposerServiceProvider extends ServiceProvider
 
             $artistsall = Artist::all();
             $view->with('artistsall', $artistsall);
+
+            $categoriesall = Category::all();
+            $view->with('categoriesall', $categoriesall);
 
         });
     }

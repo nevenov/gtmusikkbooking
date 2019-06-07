@@ -151,6 +151,10 @@ class AdminArtistsController extends Controller
 
         if($artist->photo){
             unlink(public_path() . $artist->photo->file);
+
+            $photo = Photo::findOrFail($artist->photo_id);
+
+            $photo->delete();
         }
 
         $artist->delete();

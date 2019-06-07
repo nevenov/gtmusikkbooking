@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
+use App\Photo;
 use Illuminate\Http\Request;
 
 class AdminCategoriesController extends Controller
@@ -14,6 +16,8 @@ class AdminCategoriesController extends Controller
     public function index()
     {
         //
+        $categories = Category::orderBy('created_at', 'asc')->paginate(20);
+        return view('admin.categories.index', compact('categories'));
     }
 
     /**
@@ -24,6 +28,7 @@ class AdminCategoriesController extends Controller
     public function create()
     {
         //
+        return view('admin.categories.create');
     }
 
     /**
@@ -35,6 +40,22 @@ class AdminCategoriesController extends Controller
     public function store(Request $request)
     {
         //
+        $input = $request->all();
+
+        if($file = $request->file('photo_id')){
+
+            $name = time() . $file->getClientOriginalName();
+
+            $file->move('images', $name);
+
+            $photo = Photo::create(['file'=>$name]);
+
+            $input['photo_id'] = $photo->id;
+        }
+
+        Category::create($input);
+
+        return redirect('/admin/categories')->with('status', 'Категорията е създадена успешно.');
     }
 
     /**
@@ -57,6 +78,11 @@ class AdminCategoriesController extends Controller
     public function edit($id)
     {
         //
+        $category = Category::findOrFail($id);
+
+        return view('admin.categories.edit', compact('category'));
+
+//        dd($category);
     }
 
     /**
@@ -69,6 +95,40 @@ class AdminCategoriesController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $category = Category::findOrFail($id);
+
+        $input = $request->all();
+
+        if($file = $request->file('photo_id')){
+
+            $name = time() . $file->getClientOriginalName();
+
+            $file->move('images', $name);
+
+
+            if($category->photo) {
+
+                unlink(public_path() . $category->photo->file);
+
+                $category->photo->update(['file'=>$name]);
+
+                $input['photo_id'] = $category->photo->id;
+
+            } else {
+
+                $photo = Photo::create(['file'=>$name]);
+
+                $input['photo_id'] = $photo->id;
+
+            }
+
+        }
+
+        $category->where('id', $id)->first()->update($input);
+
+        return redirect('/admin/categories')->with('status', 'Категорията е редактирана успешно. ');
+
+//        dd($request->all());
     }
 
     /**
@@ -80,5 +140,18 @@ class AdminCategoriesController extends Controller
     public function destroy($id)
     {
         //
+        $category = Category::findOrFail($id);
+
+        if($category->photo){
+            unlink(public_path() . $category->photo->file);
+
+            $photo = Photo::findOrFail($category->photo_id);
+
+            $photo->delete();
+        }
+
+        $category->delete();
+
+        return redirect('/admin/categories')->with('status', 'Групата е изтрита успешно. ');
     }
 }

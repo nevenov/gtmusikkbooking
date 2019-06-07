@@ -94,7 +94,7 @@
             <ul class="navbar-nav">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="{{ route('admin.categories.index') }}">
                         <i class="fas fa-users" style="color: #4c4c4c;"></i>{{ __('Групи') }}
                     </a>
                 </li>

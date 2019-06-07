@@ -63,14 +63,21 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 
-    // View Composer
-//    View::composer(['*'], function ($view){
-//
-//        $artistsall = Artist::all();
-//        $view->with('artistsall', $artistsall);
-//
-//    });
+    //routes for Category
+    Route::resource('admin/categories', 'AdminCategoriesController', ['names'=>[
 
+        'index'=>'admin.categories.index',
+        'create'=>'admin.categories.create',
+        'store'=>'admin.categories.store',
+        'show'=>'admin.categories.show',
+        'edit'=>'admin.categories.edit',
+        'update'=>'admin.categories.update',
+        'destroy'=>'admin.categories.destroy'
+
+    ]]);
+
+    // this route is used to delete photo in Category -> Edit view
+    Route::get('admin/photos/categories/{id}/delete', ['uses' => 'AdminPhotosController@destroycategory', 'as' => 'admin.photos.categories.delete']);
 
 });
 
