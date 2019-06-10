@@ -24,7 +24,7 @@
                             <thead class="thead-light">
                                 <tr>
                                     <th scope="col">Снимка</th>
-                                    <th scope="col">Име</th>
+                                    <th scope="col">Инициали / Име</th>
                                     <th scope="col">Група</th>
                                     <th scope="col">Статус</th>
                                     <th scope="col">Добавен на</th>
@@ -37,14 +37,14 @@
 
                                 <tr>
                                     <td><img height="50" src="{{ $artist->photo ? $artist->photo->file : $artist->photoPlaceholder() }}" alt="{{ $artist->title }}"></td>
-                                    <th scope="row">{{ $artist->title }}</th>
+                                    <th scope="row">{{  $artist->initials . " / " . $artist->title }}</th>
                                     <td>{{ $artist->category_id }}</td>
                                     <td><span class="{{ $artist->status=='active' ? 'text-success' : 'text-danger' }}">
                                         {{ $artist->status=='active' ? '' : 'не' }}активен
                                         </span>
                                     </td>
                                     <td>{{ \Carbon\Carbon::parse($artist->created_at)->format('d M Y') }}</td>
-                                    <td>{{ \Carbon\Carbon::parse($artist->updated_at)->format('d M Y') }}</td>
+                                    <td>{{ \Carbon\Carbon::parse($artist->updated_at)->format('d M Y H:s') }}</td>
                                 </tr>
 
                                 @endforeach

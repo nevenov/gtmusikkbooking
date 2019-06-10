@@ -18,6 +18,8 @@ class Artist extends Model
         'photo_id',
         'status',
         'title',
+        'initials',
+        'pass',
         'body',
         'audio_id',
         'audio2',

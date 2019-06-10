@@ -50,9 +50,19 @@
 
 
                                 <div class="form-row">
-                                    <div class="form-group col-md-10">
+                                    <div class="form-group col-md-6">
                                         <label class="form-control-label" for="input-title">{{ __('Име') }}</label>
                                         <input type="text" name="title" id="input-title" class="form-control" placeholder="{{ __('Име на артиста') }}" value="{{ old('title') }}" required autofocus>
+                                    </div>
+
+                                    <div class="form-group col-md-2">
+                                        <label class="form-control-label" for="input-initials">{{ __('Инициали') }}</label>
+                                        <input type="text" name="initials" id="input-initials" class="form-control" placeholder="{{ __('Инициали') }}" value="{{ old('initials') }}" required>
+                                    </div>
+
+                                    <div class="form-group col-md-2">
+                                        <label class="form-control-label" for="input-pass">{{ __('Код') }}</label>
+                                        <input type="text" name="pass" id="input-pass" class="form-control" placeholder="{{ __('Код') }}" value="{{ old('pass') }}" required>
                                     </div>
                                 </div>
 
