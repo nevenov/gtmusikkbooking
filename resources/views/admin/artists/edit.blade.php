@@ -48,8 +48,9 @@
                                             {{--@foreach($categories as $key=>$val)--}}
                                             {{--<option value="{{ $val->state_code}}" {{ ((isset($user->state_code) && $user->state_code== $val->state_code)? "selected":"") }}>{{$val->state_name}}</option>--}}
                                             {{--@endforeach--}}
-                                            <option value="1">Category1</option>
-                                            <option value="2">Category2</option>
+                                            @foreach($categories as $category)
+                                                <option value="{{ $category->id }}"{{ ((isset($artist->category_id) && $artist->category_id==$category->id) ? " selected":"") }}>{{ $category->name }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
 

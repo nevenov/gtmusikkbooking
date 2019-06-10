@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Artist;
+use App\Category;
 use App\Photo;
 use Illuminate\Http\Request;
 
@@ -28,7 +29,9 @@ class AdminArtistsController extends Controller
     public function create()
     {
         //
-        return view('admin.artists.create');
+        $categories = Category::orderBy('created_at', 'asc')->get();
+
+        return view('admin.artists.create', compact('categories'));
     }
 
     /**
@@ -82,7 +85,9 @@ class AdminArtistsController extends Controller
         //
         $artist = Artist::findOrFail($id);
 
-        return view('admin.artists.edit', compact('artist'));
+        $categories = Category::orderBy('created_at', 'asc')->get();
+
+        return view('admin.artists.edit', compact('artist', 'categories'));
 
     }
 

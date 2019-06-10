@@ -33,11 +33,9 @@
                                     <div class="form-group col-md-5">
                                         <label class="mr-sm-2" for="input-category_id">{{ __('Група') }}</label>
                                         <select class="custom-select mr-sm-2" name="category_id" id="input-category_id">
-                                            {{--@foreach($categories as $key=>$val)--}}
-                                            {{--<option value="{{ $val->state_code}}" {{ ((isset($user->state_code) && $user->state_code== $val->state_code)? "selected":"") }}>{{$val->state_name}}</option>--}}
-                                            {{--@endforeach--}}
-                                            <option value="1">Category1</option>
-                                            <option value="2">Category2</option>
+                                            @foreach($categories as $category)
+                                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
 

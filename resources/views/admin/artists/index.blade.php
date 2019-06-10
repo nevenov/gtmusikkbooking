@@ -47,7 +47,7 @@
                                 <tr>
                                     <td><img height="50" src="{{ $artist->photo ? $artist->photo->file : $artist->photoPlaceholder() }}" alt="{{ $artist->title }}"></td>
                                     <th scope="col"><a href="{{ route('admin.artists.edit', $artist->id) }}">{{ $artist->title }}</a></th>
-                                    <td>{{ $artist->category_id }}</td>
+                                    <td>{{ $artist->category->name }}</td>
                                     <td><span class="{{ $artist->status=='active' ? 'text-success' : 'text-danger' }}">
                                         {{ $artist->status=='active' ? '' : 'не' }}активен
                                         </span>
