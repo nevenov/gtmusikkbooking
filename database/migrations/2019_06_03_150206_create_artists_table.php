@@ -22,15 +22,15 @@ class CreateArtistsTable extends Migration
             $table->string('title');
             $table->string("slug");
             $table->text('body')->nullable();
-            $table->string('audio1')->nullable();
+            $table->string('audio_id')->nullable()->index();
             $table->string('audio2')->nullable();
-            $table->string('audio3')->nullable();;
-            $table->string('video1')->nullable();;
-            $table->string('video2')->nullable();;
-            $table->string('video3')->nullable();;
-            $table->string('reference1')->nullable();;
-            $table->string('reference2')->nullable();;
-            $table->string('reference3')->nullable();;
+            $table->string('audio3')->nullable();
+            $table->string('video1')->nullable();
+            $table->string('video2')->nullable();
+            $table->string('video3')->nullable();
+            $table->string('reference1')->nullable();
+            $table->string('reference2')->nullable();
+            $table->string('reference3')->nullable();
             $table->timestamps();
         });
     }

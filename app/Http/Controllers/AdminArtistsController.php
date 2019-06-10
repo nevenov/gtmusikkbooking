@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Artist;
+use App\Audio;
 use App\Category;
 use App\Photo;
 use Illuminate\Http\Request;
@@ -17,7 +18,7 @@ class AdminArtistsController extends Controller
     public function index()
     {
         //
-        $artists = Artist::orderBy('created_at', 'desc')->paginate(20);
+        $artists = Artist::orderBy('title', 'asc')->paginate(50);
         return view('admin.artists.index', compact('artists'));
     }
 
@@ -34,6 +35,17 @@ class AdminArtistsController extends Controller
         return view('admin.artists.create', compact('categories'));
     }
 
+
+    // search
+    public function search(Request $request){
+
+        $search = $request->get('search');
+        //dd($search);
+        $artists = Artist::where('title', 'LIKE', '%' . $search . '%')->orderBy('title', 'asc')->paginate(50);
+        return view('admin.artists.index', ['artists'=>$artists]);
+
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -45,6 +57,7 @@ class AdminArtistsController extends Controller
         //
         $input = $request->all();
 
+        // upload artist photo
         if($file = $request->file('photo_id')){
 
             $name = time() . $file->getClientOriginalName();
@@ -54,6 +67,18 @@ class AdminArtistsController extends Controller
             $photo = Photo::create(['file'=>$name]);
 
             $input['photo_id'] = $photo->id;
+        }
+
+        // upload artist demo mp3
+        if($file = $request->file('audio_id')){
+
+            $name = time() . $file->getClientOriginalName();
+
+            $file->move('audio', $name);
+
+            $audio = Audio::create(['file'=>$name]);
+
+            $input['audio_id'] = $audio->id;
         }
 
         Artist::create($input);
@@ -105,6 +130,8 @@ class AdminArtistsController extends Controller
 
         $input = $request->all();
 
+
+        // upload artist photo
         if($file = $request->file('photo_id')){
 
             $name = time() . $file->getClientOriginalName();
@@ -130,10 +157,34 @@ class AdminArtistsController extends Controller
                 $input['photo_id'] = $photo->id;
 
             }
-
-
-
         }
+
+
+        // upload artist demo mp3
+        if($file = $request->file('audio_id')){
+
+            $name = time() . $file->getClientOriginalName();
+
+            $file->move('audio', $name);
+
+
+            if($artist->audio) {
+
+                unlink(public_path() . $artist->audio->file);
+
+                $artist->audio->update(['file'=>$name]);
+
+                $input['audio_id'] = $artist->audio->id;
+
+            } else {
+
+                $audio = Audio::create(['file'=>$name]);
+
+                $input['audio_id'] = $audio->id;
+
+            }
+        }
+
 
         $artist->where('id', $id)->first()->update($input);
 

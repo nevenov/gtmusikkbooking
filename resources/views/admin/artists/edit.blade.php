@@ -42,19 +42,16 @@
 
 
                                 <div class="form-row">
-                                    <div class="form-group col-md-5">
+                                    <div class="form-group col-lg-5">
                                         <label class="mr-sm-2" for="input-category_id">{{ __('Група') }}</label>
                                         <select class="custom-select mr-sm-2" name="category_id" id="input-category_id">
-                                            {{--@foreach($categories as $key=>$val)--}}
-                                            {{--<option value="{{ $val->state_code}}" {{ ((isset($user->state_code) && $user->state_code== $val->state_code)? "selected":"") }}>{{$val->state_name}}</option>--}}
-                                            {{--@endforeach--}}
                                             @foreach($categories as $category)
                                                 <option value="{{ $category->id }}"{{ ((isset($artist->category_id) && $artist->category_id==$category->id) ? " selected":"") }}>{{ $category->name }}</option>
                                             @endforeach
                                         </select>
                                     </div>
 
-                                    <div class="form-group col-md-5 offset-md-1">
+                                    <div class="form-group col-lg-5 offset-lg-1">
                                         <label class="mr-sm-2" for="input-status">{{ __('Статус') }}</label>
                                         <select class="custom-select mr-sm-2" name="status" id="input-status">
                                             <option value="active"{{ $artist->status=='active' ? ' selected=selected' : '' }}>Активен</option>
@@ -65,21 +62,20 @@
 
 
                                 <div class="form-row">
-                                    <div class="form-group col-md-10">
+                                    <div class="form-group col-lg-10">
                                         <label class="form-control-label" for="input-title">{{ __('Име') }}</label>
                                         <input type="text" name="title" id="input-title" class="form-control" value="{{ $artist->title }}" placeholder="{{ __('Име на артиста') }}" required autofocus>
                                     </div>
                                 </div>
 
 
-                                {{--<div class="form-row">--}}
                                 @if($artist->photo)
-                                <div class="col-md-4 float-left">
+                                <div class="col-lg-4 float-left">
                                     <img class="mw-100 img-responsive" src="{{ $artist->photo->file }}" alt="">
 
                                 </div>
                                 @endif
-                                <div class="custom-file col-md-6">
+                                <div class="custom-file col-lg-6">
                                     <input type="file" name="photo_id" class="custom-file-input" id="customFile">
                                     <label class="custom-file-label" for="customFile">Избери снимка</label>
                                     @if($artist->photo)
@@ -88,7 +84,6 @@
                                     </div>
                                     @endif
                                 </div>
-                                {{--</div>--}}
 
                                 <div class="clearfix"></div>
 
@@ -102,26 +97,48 @@
 
 
                                 <div class="form-row">
-                                    <div class="form-group col-md-8">
+                                    <div class="form-group col-lg-8">
                                         <label class="form-control-label" for="input-video1">{{ __('Youtube demo') }}</label>
                                         <input type="text" name="video1" id="input-reference1" class="form-control" placeholder="{{ __('Напр.: https://www.youtube.com/watch?v=zVOuRQPPdoo') }}" value="{{ $artist->video1 }}">
                                     </div>
                                 </div>
 
 
-                                <div class="custom-file col-md-8">
-                                    <input type="file" name="audio1" class="custom-file-input" id="customFile1">
-                                    <label class="custom-file-label" for="customFile1">Избери аудио файл за демо</label>
+                                <div class="custom-file col-lg-8">
+                                    <input type="file" name="audio_id" class="custom-file-input" id="customFile1">
+                                    <label class="custom-file-label" for="customFile1">Избери mp3 файл за демо</label>
+                                    @if($artist->audio)
+                                    <div class="row">
+                                        <div class="col-lg-5 pl-0 pt-2">
+
+                                            <audio controls>
+                                                <source src="{{ $artist->audio->file }}" type="audio/mpeg">
+                                                Your browser does not support the audio element.
+                                            </audio>
+
+                                        </div>
+
+                                        <div class="col-lg-7 pr-0 pt-3 text-right">
+
+                                            @if($artist->audio)
+                                                <a href="{{ route('admin.audios.delete', $artist->id) }}" class="btn btn-danger btn-sm" onclick="return confirm('Сигурен ли сте, че искате да изтриете демото на този артист?')">Изтрий демо</a>
+                                            @endif
+
+                                        </div>
+
+                                    </div>
+                                    @endif
+
                                 </div>
 
 
                                 <div class="form-row pt-4">
-                                    <div class="form-group col-md-5">
+                                    <div class="form-group col-lg-5">
                                         <label class="form-control-label" for="input-reference1">{{ __('Референции') }}</label>
                                         <input type="text" name="reference1" id="input-reference1" class="form-control" placeholder="{{ __('Референция 1') }}" value="{{ $artist->reference1 }}">
                                     </div>
 
-                                    <div class="form-group col-md-5 offset-1">
+                                    <div class="form-group col-lg-5 offset-lg-1">
                                         <label class="form-control-label" for="input-reference2"> &nbsp;&nbsp;&nbsp;&nbsp;</label>
                                         <input type="text" name="reference2" id="input-reference2" class="form-control" placeholder="{{ __('Референция 2') }}" value="{{ $artist->reference2 }}">
                                     </div>

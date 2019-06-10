@@ -79,8 +79,8 @@
 
 
                                 <div class="custom-file col-md-8">
-                                    <input type="file" name="audio1" class="custom-file-input" id="customFile1">
-                                    <label class="custom-file-label" for="customFile1">Избери аудио файл за демо</label>
+                                    <input type="file" name="audio_id" class="custom-file-input" id="customFile1">
+                                    <label class="custom-file-label" for="customFile1">Избери mp3 файл за демо</label>
                                 </div>
 
 

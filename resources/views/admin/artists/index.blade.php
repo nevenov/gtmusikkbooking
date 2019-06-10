@@ -7,12 +7,25 @@
         <div class="row">
             <div class="col">
                 <div class="card shadow">
-                    <div class="card-header border-0">
+                    <div class="card-header border-0 pb-3">
                         <div class="row align-items-center">
-                            <div class="col-8">
-                                <h3 class="mb-0">{{ __('Артисти') }}</h3>
+                            <div class="col-lg-4 mb-2">
+                                <h3 class="mb-0"><a href="{{ route('admin.artists.index') }}">{{ __('Артисти') }}</a></h3>
                             </div>
-                            <div class="col-4 text-right">
+                            <div class="col-lg-4 mb-2">
+                                <form action="{{ route('admin.artists.search') }}" method="post">
+                                    @csrf
+                                    <div class="input-group">
+                                        <input class="form-control form-control-sm py-2" type="search" name="search" value="{{ old('search') }}">
+                                        <span class="input-group-append">
+                                            <button class="btn btn-sm btn-primary" type="submit">
+                                                <i class="fa fa-search"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-lg-4 text-right mb-2">
                                 <a href="{{ route('admin.artists.create') }}" class="btn btn-sm btn-primary">{{ __('Добави нов артист') }}</a>
                             </div>
                         </div>
@@ -52,8 +65,8 @@
                                         {{ $artist->status=='active' ? '' : 'не' }}активен
                                         </span>
                                     </td>
-                                    <td>{{ $artist->created_at->format('d M Y H:i') }}</td>
-                                    <td>{{ $artist->updated_at->format('d M Y H:i') }}</td>
+                                    <td>{{ $artist->created_at->format('d M Y') }}</td>
+                                    <td>{{ $artist->updated_at->format('d M Y') }}</td>
                                     <td class="text-right">
                                         <div class="dropdown">
                                             <a class="btn btn-sm btn-icon-only text-light" href="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

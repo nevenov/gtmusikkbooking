@@ -19,7 +19,7 @@ class Artist extends Model
         'status',
         'title',
         'body',
-        'audio1',
+        'audio_id',
         'audio2',
         'audio3',
         'video1',
@@ -53,13 +53,29 @@ class Artist extends Model
 
     }
 
+
     public function category(){
 
         return $this->belongsTo('App\Category');
 
     }
 
+
+    public function audio(){
+
+        return $this->belongsTo('App\Audio');
+
+    }
+
+
     public function photoPlaceholder(){
+
+        return "https://i.pravatar.cc/80?img=55";
+
+    }
+
+
+    public function audioPlaceholder(){
 
         return "https://i.pravatar.cc/80?img=55";
 

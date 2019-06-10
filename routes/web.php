@@ -55,6 +55,9 @@ Route::group(['middleware' => 'auth'], function () {
     ]]);
 
 
+    Route::post('admin/artists/search', 'AdminArtistsController@search')->name('admin.artists.search');
+
+
     // route for admin/photos use AdminPhotosController
     Route::resource('admin/photos', 'AdminPhotosController');
 
@@ -78,6 +81,14 @@ Route::group(['middleware' => 'auth'], function () {
 
     // this route is used to delete photo in Category -> Edit view
     Route::get('admin/photos/categories/{id}/delete', ['uses' => 'AdminPhotosController@destroycategory', 'as' => 'admin.photos.categories.delete']);
+
+
+    // route for admin/audios use AdminPhotosController
+    Route::resource('admin/audios', 'AdminAudiosController');
+
+    // this route is used to delete photo in Category -> Edit view
+    Route::get('admin/audios/{id}/delete', ['uses' => 'AdminAudiosController@destroy', 'as' => 'admin.audios.delete']);
+
 
 });
 
