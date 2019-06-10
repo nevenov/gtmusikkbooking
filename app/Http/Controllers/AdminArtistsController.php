@@ -41,7 +41,7 @@ class AdminArtistsController extends Controller
 
         $search = $request->get('search');
         //dd($search);
-        $artists = Artist::where('title', 'LIKE', '%' . $search . '%')->orderBy('title', 'asc')->paginate(50);
+        $artists = Artist::where('title', 'LIKE', '%' . $search . '%')->orWhere('initials', 'like', '%' . $search . '%')->orderBy('title', 'asc')->paginate(50);
         return view('admin.artists.index', ['artists'=>$artists]);
 
     }
