@@ -20,9 +20,11 @@ This is a website for artists managers. It is based on Laravel 5.8 framework.
 6. Copy or rename .env.example file in the root of application to .end
 
 7. Open .env file and replace the constants:   
-```DB_DATABASE=homestead  
+
+DB_DATABASE=homestead  
 DB_USERNAME=homestead  
-DB_PASSWORD=secret```
+DB_PASSWORD=secret
+
 with your database, user and password.
 
 8. Go to the terminal(git bash) again and run:  
