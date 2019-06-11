@@ -19,10 +19,10 @@ This is a website for artists managers. It is based on Laravel 5.8 framework.
 
 6. Copy or rename .env.example file in the root of application to .end
 
-7. Open .env file and replace the constants:
-DB_DATABASE=homestead  
+7. Open .env file and replace the constants:   
+```DB_DATABASE=homestead  
 DB_USERNAME=homestead  
-DB_PASSWORD=secret  
+DB_PASSWORD=secret```
 with your database, user and password.
 
 8. Go to the terminal(git bash) again and run:  
@@ -41,4 +41,4 @@ Thank you for considering contributing to that app.
 
 ## License
 
-The G.T.MusicBooking is open-source software licensed under the [GNU General Public License v3.0](https://opensource.org/licenses/GPL-3.0).
+The G.T.MusicBooking is open-source software, created by Stoyan Nedev. Licensed under the [GNU General Public License v3.0](https://opensource.org/licenses/GPL-3.0).
