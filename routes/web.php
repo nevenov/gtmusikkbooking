@@ -13,15 +13,22 @@
 
 use App\Artist;
 
-Route::get('/', function () {
-    return view('index');
-});
+//Route::get('/', function () {
+//    return view('index');
+//});
+
+
+Route::get('/', 'FrontCategoriesController@index')->name('index');
 
 Auth::routes(['verify' => true, 'register' => false]);
 
 
 //Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin', 'HomeController@index')->name('admin');
+
+
+
+//Route::resource('categories', 'FrontCategoriesController');
 
 
 Route::group(['middleware' => 'auth'], function () {
@@ -90,5 +97,5 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('admin/audios/{id}/delete', ['uses' => 'AdminAudiosController@destroy', 'as' => 'admin.audios.delete']);
 
 
-});
+}); // end auth middleware
 

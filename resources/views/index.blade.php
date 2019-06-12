@@ -38,92 +38,100 @@
             <div class="gap"></div>
 
             <div id="artists" class="row purewhite">
-                <div class="col-md-3 col-xs-6">
+
+            @if(count($categories)>0)
+                @foreach($categories as $category)
+                <div class="col-md-3 col-sm-6">
                     <div class="center team-member">
                         <div class="team-image">
-                            <img class="img-responsive img-thumbnail bounce-in" src="{{ asset('front') }}/images/bg/groups-pop-rock.jpg" alt="">
+                            <img class="img-responsive img-thumbnail bounce-in" src="{{$category->photo ? $category->photo->file : $category->frontPhotoPlaceholder()}}" alt="">
                             <div class="overlay">
                                 <a class="preview btn btn-outlined btn-primary" href=""><i class="fa fa-link"></i></a>
                             </div>
                         </div>
                         <div class="team-content fade-up">
-                            <h5><a href="">Bryllup</a>
+                            <h5><a href="">{{ $category->name }}</a>
                                 <small class="role muted"><br><a href="">Se artister</a></small>
                             </h5>
 
                         </div>
                     </div>
                 </div>
+                @endforeach
+            @endif
 
 
-                <div class="col-md-3 col-xs-6 mb-4">
-                    <div class="center team-member">
-                        <div class="team-image">
-                            <img class="img-responsive img-thumbnail bounce-in" src="{{ asset('front') }}/images/bg/groups-pop-rock.jpg" alt="">
-                            <div class="overlay">
-                                <a class="preview btn btn-outlined btn-primary" href=""><i class="fa fa-link"></i></a>
-                            </div>
-                        </div>
-                        <div class="team-content fade-up">
-                            <h5><a href="">Bryllup</a>
-                                <small class="role muted"><br><a href="">View Artists</a></small>
-                            </h5>
+                {{--<div class="col-md-3 col-xs-6 mb-4">--}}
+                    {{--<div class="center team-member">--}}
+                        {{--<div class="team-image">--}}
+                            {{--<img class="img-responsive img-thumbnail bounce-in" src="{{ asset('front') }}/images/bg/groups-pop-rock.jpg" alt="">--}}
+                            {{--<div class="overlay">--}}
+                                {{--<a class="preview btn btn-outlined btn-primary" href=""><i class="fa fa-link"></i></a>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="team-content fade-up">--}}
+                            {{--<h5><a href="">Bryllup</a>--}}
+                                {{--<small class="role muted"><br><a href="">View Artists</a></small>--}}
+                            {{--</h5>--}}
 
-                        </div>
-                    </div>
-                </div>
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
 
-                <div class="col-md-3 col-xs-6">
-                    <div class="center team-member">
-                        <div class="team-image">
-                            <img class="img-responsive img-thumbnail bounce-in" src="{{ asset('front') }}/images/bg/groups-pop-rock.jpg" alt="">
-                            <div class="overlay">
-                                <a class="preview btn btn-outlined btn-primary" href=""><i class="fa fa-link"></i></a>
-                            </div>
-                        </div>
-                        <div class="team-content fade-up">
-                            <h5><a href="">Bryllup</a>
-                                <small class="role muted"><br><a href="">View Artists</a></small>
-                            </h5>
+                {{--<div class="col-md-3 col-xs-6">--}}
+                    {{--<div class="center team-member">--}}
+                        {{--<div class="team-image">--}}
+                            {{--<img class="img-responsive img-thumbnail bounce-in" src="{{ asset('front') }}/images/bg/groups-pop-rock.jpg" alt="">--}}
+                            {{--<div class="overlay">--}}
+                                {{--<a class="preview btn btn-outlined btn-primary" href=""><i class="fa fa-link"></i></a>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="team-content fade-up">--}}
+                            {{--<h5><a href="">Bryllup</a>--}}
+                                {{--<small class="role muted"><br><a href="">View Artists</a></small>--}}
+                            {{--</h5>--}}
 
-                        </div>
-                    </div>
-                </div>
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
 
-                <div class="col-md-3 col-xs-6">
-                    <div class="center team-member">
-                        <div class="team-image">
-                            <img class="img-responsive img-thumbnail bounce-in" src="{{ asset('front') }}/images/bg/groups-pop-rock.jpg" alt="">
-                            <div class="overlay">
-                                <a class="preview btn btn-outlined btn-primary" href=""><i class="fa fa-link"></i></a>
-                            </div>
-                        </div>
-                        <div class="team-content fade-up">
-                            <h5><a href="">Bryllup</a>
-                                <small class="role muted"><br><a href="">View Artists</a></small>
-                            </h5>
+                {{--<div class="col-md-3 col-xs-6">--}}
+                    {{--<div class="center team-member">--}}
+                        {{--<div class="team-image">--}}
+                            {{--<img class="img-responsive img-thumbnail bounce-in" src="{{ asset('front') }}/images/bg/groups-pop-rock.jpg" alt="">--}}
+                            {{--<div class="overlay">--}}
+                                {{--<a class="preview btn btn-outlined btn-primary" href=""><i class="fa fa-link"></i></a>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="team-content fade-up">--}}
+                            {{--<h5><a href="">Bryllup</a>--}}
+                                {{--<small class="role muted"><br><a href="">View Artists</a></small>--}}
+                            {{--</h5>--}}
 
-                        </div>
-                    </div>
-                </div>
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
 
 
-                <div class="col-md-3 col-xs-6">
-                    <div class="center team-member">
-                        <div class="team-image">
-                            <img class="img-responsive img-thumbnail bounce-in" src="{{ asset('front') }}/images/bg/groups-pop-rock.jpg" alt="">
-                            <div class="overlay">
-                                <a class="preview btn btn-outlined btn-primary" href=""><i class="fa fa-link"></i></a>
-                            </div>
-                        </div>
-                        <div class="team-content fade-up">
-                            <h5><a href="">Bryllup</a>
-                                <small class="role muted"><br><a href="">View Artists</a></small>
-                            </h5>
+                {{--<div class="col-md-3 col-xs-6">--}}
+                    {{--<div class="center team-member">--}}
+                        {{--<div class="team-image">--}}
+                            {{--<img class="img-responsive img-thumbnail bounce-in" src="{{ asset('front') }}/images/bg/groups-pop-rock.jpg" alt="">--}}
+                            {{--<div class="overlay">--}}
+                                {{--<a class="preview btn btn-outlined btn-primary" href=""><i class="fa fa-link"></i></a>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="team-content fade-up">--}}
+                            {{--<h5><a href="">Bryllup</a>--}}
+                                {{--<small class="role muted"><br><a href="">View Artists</a></small>--}}
+                            {{--</h5>--}}
 
-                        </div>
-                    </div>
-                </div>
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+
+
+
             </div><!--/#artists-->
 
             <!--- <div class="gap"></div> --->

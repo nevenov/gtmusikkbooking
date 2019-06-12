@@ -12,13 +12,18 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert([
-            'name' => 'Stoyan Nedev',
-            'email' => 'test@email.com',
-            'email_verified_at' => now(),
-            'password' => Hash::make('secret'),
-            'created_at' => now(),
-            'updated_at' => now()
-        ]);
+
+        // check if table users is empty
+        if(DB::table('users')->get()->count() == 0){
+            DB::table('users')->insert([
+                'name' => 'Stoyan Nedev',
+                'email' => 'test@email.com',
+                'email_verified_at' => now(),
+                'password' => Hash::make('secret'),
+                'created_at' => now(),
+                'updated_at' => now()
+            ]);
+        } else { echo "\e[31mTable is not empty, therefore NOT "; }
     }
+
 }

@@ -912,6 +912,11 @@ ul.tag-cloud li {
     border-radius: 0;
     margin-bottom: 0;
     overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
     /*-webkit-transition: background .3s color .3s box-shadow .3s;*/
     /*-moz-transition: background .3s color .3s box-shadow .3s;*/
     /*transition: background .3s color .3s box-shadow .3s;*/
@@ -949,7 +954,9 @@ ul.tag-cloud li {
 
 .team-image {
     position: relative;
-    padding: 0;
+    padding: 66.66% 0 0 0;
+    width: 100%;
+    overflow: hidden;
 }
 
 .team-image .overlay {

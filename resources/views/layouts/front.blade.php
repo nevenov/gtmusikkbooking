@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Home | Impact By Distinctive Themes</title>
+    <title>G.T.MUSIKKBOOKING - ARTISTER AGENTUR</title>
     <link href="{{ asset('front') }}/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ asset('front') }}/css/font-awesome.min.css" rel="stylesheet">
     <link href="{{ asset('front') }}/css/pe-icons.css" rel="stylesheet">
