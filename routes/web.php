@@ -20,6 +20,9 @@ use App\Artist;
 
 Route::get('/', 'FrontCategoriesController@index')->name('index');
 
+
+Route::get('/gruppe/{id}', ['as'=>'categories.gruppe', 'uses'=>'FrontCategoriesController@show']);
+
 Auth::routes(['verify' => true, 'register' => false]);
 
 

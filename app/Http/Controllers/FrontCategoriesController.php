@@ -46,9 +46,14 @@ class FrontCategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
         //
+        $category = Category::findBySlugOrFail($slug);
+
+        $artists = $category->artists()->where('status', 'active')->get();
+
+        return view('gruppe', compact('category', 'artists'));
     }
 
     /**

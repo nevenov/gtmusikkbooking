@@ -316,21 +316,24 @@ blockquote {
 
 .portfolio-item .item-inner {
     background: #fff;
-    padding: 0;
     margin: 0 20px 20px 0;
     position: relative;
+    padding: 90% 0 0 0;
+    overflow: hidden;
 }
 
 .portfolio-item img {
     width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
 }
 
 .portfolio-item h5 {
     background: #fff;
     margin: 0;
-    padding: 15px;
-    font-weight: 700;
-    font-size: 16px;
     white-space: nowrap;
     text-overflow: ellipsis;
     position: relative;
@@ -341,6 +344,10 @@ blockquote {
     -o-transition: all .5s ease-in-out;
     /*-ms-transition: all .5s ease-in-out;*/
     transition: all .5s ease-in-out;
+    padding: 20px 10px;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 2px;
 }
 
 .portfolio-item:hover h5,
@@ -2185,14 +2192,6 @@ img.author-box-image {
     letter-spacing: 2px;
 }
 
-.portfolio-item h5 {
-    background: #fff;
-    margin: 0 20px 0 0;
-    padding: 20px 10px;
-    font-weight: 400;
-    font-size: 14px;
-    letter-spacing: 2px;
-}
 
 .post .post-title {
     font-weight: 400;

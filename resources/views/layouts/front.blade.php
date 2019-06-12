@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="Stoyan Nedev">
     <title>G.T.MUSIKKBOOKING - ARTISTER AGENTUR</title>
     <link href="{{ asset('front') }}/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ asset('front') }}/css/font-awesome.min.css" rel="stylesheet">

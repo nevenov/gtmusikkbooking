@@ -33,7 +33,7 @@
             <div class="center gap fade-down section-heading">
                 <h2 class="main-title">~ Artister ~</h2>
                 <hr>
-                <p>Velg ønsket artister kategori:</p>
+                <p>Velg ønsket artister kategori/gruppe:</p>
             </div>
             <div class="gap"></div>
 
@@ -46,12 +46,12 @@
                         <div class="team-image">
                             <img class="img-responsive img-thumbnail bounce-in" src="{{$category->photo ? $category->photo->file : $category->frontPhotoPlaceholder()}}" alt="">
                             <div class="overlay">
-                                <a class="preview btn btn-outlined btn-primary" href=""><i class="fa fa-link"></i></a>
+                                <a class="preview btn btn-outlined btn-primary" href="/gruppe/{{ $category->slug }}"><i class="fa fa-link"></i></a>
                             </div>
                         </div>
                         <div class="team-content fade-up">
-                            <h5><a href="">{{ $category->name }}</a>
-                                <small class="role muted"><br><a href="">Se artister</a></small>
+                            <h5><a href="/gruppe/{{ $category->slug }}">{{ $category->name }}</a>
+                                <small class="role muted"><br><a href="/gruppe/{{ $category->slug }}">Se artister</a></small>
                             </h5>
 
                         </div>
@@ -59,77 +59,6 @@
                 </div>
                 @endforeach
             @endif
-
-
-                {{--<div class="col-md-3 col-xs-6 mb-4">--}}
-                    {{--<div class="center team-member">--}}
-                        {{--<div class="team-image">--}}
-                            {{--<img class="img-responsive img-thumbnail bounce-in" src="{{ asset('front') }}/images/bg/groups-pop-rock.jpg" alt="">--}}
-                            {{--<div class="overlay">--}}
-                                {{--<a class="preview btn btn-outlined btn-primary" href=""><i class="fa fa-link"></i></a>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                        {{--<div class="team-content fade-up">--}}
-                            {{--<h5><a href="">Bryllup</a>--}}
-                                {{--<small class="role muted"><br><a href="">View Artists</a></small>--}}
-                            {{--</h5>--}}
-
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-
-                {{--<div class="col-md-3 col-xs-6">--}}
-                    {{--<div class="center team-member">--}}
-                        {{--<div class="team-image">--}}
-                            {{--<img class="img-responsive img-thumbnail bounce-in" src="{{ asset('front') }}/images/bg/groups-pop-rock.jpg" alt="">--}}
-                            {{--<div class="overlay">--}}
-                                {{--<a class="preview btn btn-outlined btn-primary" href=""><i class="fa fa-link"></i></a>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                        {{--<div class="team-content fade-up">--}}
-                            {{--<h5><a href="">Bryllup</a>--}}
-                                {{--<small class="role muted"><br><a href="">View Artists</a></small>--}}
-                            {{--</h5>--}}
-
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-
-                {{--<div class="col-md-3 col-xs-6">--}}
-                    {{--<div class="center team-member">--}}
-                        {{--<div class="team-image">--}}
-                            {{--<img class="img-responsive img-thumbnail bounce-in" src="{{ asset('front') }}/images/bg/groups-pop-rock.jpg" alt="">--}}
-                            {{--<div class="overlay">--}}
-                                {{--<a class="preview btn btn-outlined btn-primary" href=""><i class="fa fa-link"></i></a>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                        {{--<div class="team-content fade-up">--}}
-                            {{--<h5><a href="">Bryllup</a>--}}
-                                {{--<small class="role muted"><br><a href="">View Artists</a></small>--}}
-                            {{--</h5>--}}
-
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-
-
-                {{--<div class="col-md-3 col-xs-6">--}}
-                    {{--<div class="center team-member">--}}
-                        {{--<div class="team-image">--}}
-                            {{--<img class="img-responsive img-thumbnail bounce-in" src="{{ asset('front') }}/images/bg/groups-pop-rock.jpg" alt="">--}}
-                            {{--<div class="overlay">--}}
-                                {{--<a class="preview btn btn-outlined btn-primary" href=""><i class="fa fa-link"></i></a>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                        {{--<div class="team-content fade-up">--}}
-                            {{--<h5><a href="">Bryllup</a>--}}
-                                {{--<small class="role muted"><br><a href="">View Artists</a></small>--}}
-                            {{--</h5>--}}
-
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-
 
 
             </div><!--/#artists-->

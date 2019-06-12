@@ -32,6 +32,12 @@ class Category extends Model
 
     }
 
+    public function artists(){
+
+        return $this->hasMany('App\Artist');
+
+    }
+
     public function photoPlaceholder(){
 
         return "https://i.pravatar.cc/70?img=55";
