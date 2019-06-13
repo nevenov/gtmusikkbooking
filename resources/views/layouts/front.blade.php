@@ -152,8 +152,8 @@
                         <ul class="arrow">
                             <li><a href="#">Website 1</a></li>
                             <li><a href="#">Website 2</a></li>
-                            <li><a href="#">Website 3</a></li>
                             <li><a href="https://simplephpscripts.com">SimplePHPscripts</a></li>
+                            <li><a href="/admin">Admin</a></li>
                         </ul>
                     </div>
                 </div> <!--/.col-md-3-->

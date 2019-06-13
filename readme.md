@@ -1,21 +1,20 @@
 ## About G.T.MusicBooking
 
 This is a website for artists managers. It is based on Laravel 5.8 framework.
-## Learning Laravel
 
 
 ## Installation via composer
 
-1. Go to your local project directory
+1. Open your terminal(Git Bash for Win7) and navigate to your local server(localhost) in the public directory(WAMP, XAMPP)
 
 2. Paste this in the terminal:  
 ```git clone https://github.com/nevenov/gtmusikkbooking.git```
 
 3. Then in the terminal run ```composer install``` and this will download vendor folder;
 
-4. Run ```php artisan key:generate``` - this will generate new key for the application
+4. Run ```php artisan key:generate``` - this command will generate new key for the application
 
-5. Go to your database manager and create a database with user rights.
+5. Go to your database manager(phpMyAdmin) and create a database with user rights.
 
 6. Copy or rename .env.example file in the root of application to .end
 
@@ -25,13 +24,15 @@ DB_DATABASE=homestead
 DB_USERNAME=homestead  
 DB_PASSWORD=secret
 
-with your database, user and password.
+with your database, user and password. If you are using WAMP or XAMPP the defaults are localhost, root and no password.
 
 8. Go to the terminal(git bash) again and run:  
 ```php artisan migrate -seed```  
-This will create database tables and will seed with initial user:  
+This will create database tables and will add initial admin user:  
 Username: test@email.com  
 Password: secret  
+
+Also it will add some demo categories, artists and so on.   
 
 9. Go to your domain.com/admin, log in and start using this app. 
 
