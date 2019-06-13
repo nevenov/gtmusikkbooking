@@ -127,8 +127,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3 col-sm-6 about-us-widget">
-                    <h4>Global Coverage</h4>
-                    <p>Was drawing natural fat respect husband. An as noisy an offer drawn blush place. These tried for way joy wrote witty. In mr began music weeks after at begin.</p>
+                    <h4 style="margin: 30px 0;">Global dekning</h4>
+                    <p>Vi kan formidle sangere, artister og musikere fra hele verden.</p>
                 </div><!--/.col-md-3-->
 
                 <div class="col-md-2"></div>
@@ -136,10 +136,10 @@
                 <div class="col-md-3 col-sm-6">
                     <h4>Kontakt oss</h4>
                     <address>
-                        <strong>Ace Towers</strong><br>
-                        New York Ave,<br>
-                        New York, 215648<br>
-                        <abbr title="Phone"><i class="fa fa-phone"></i></abbr> 546 840654 05
+                        <strong>Norge</strong><br>
+                        Carl Platous gt.4,<br>
+                        3511 Hønefoss<br>
+                        <abbr title="Phone"><i class="fa fa-phone"></i></abbr> +47 916 95 449
                     </address>
 
                 </div><!--/.col-md-3-->
@@ -153,7 +153,7 @@
                             <li><a href="#">Website 1</a></li>
                             <li><a href="#">Website 2</a></li>
                             <li><a href="#">Website 3</a></li>
-                            <li><a href="#">Website 4</a></li>
+                            <li><a href="https://simplephpscripts.com">SimplePHPscripts</a></li>
                         </ul>
                     </div>
                 </div> <!--/.col-md-3-->

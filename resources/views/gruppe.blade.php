@@ -28,7 +28,7 @@
 
                 <li class="portfolio-item {{ $loop->iteration }} isotope-item">
                     <div class="item-inner">
-                        <img src="{{$artist->photo ? $artist->photo->file : $artist->photoPlaceholder()}}" alt="">
+                        <img src="{{$artist->photo ? $artist->photo->file : $artist->frontPhotoPlaceholder()}}" alt="">
                         {{--<h5>{{ $artist->title }}</h5>--}}
                         <div class="overlay">
                             <a class="preview btn btn-outlined btn-primary" href=""><i class="fa fa-link"></i></a>
