@@ -88,7 +88,7 @@
             <div class="center gap fade-down section-heading">
                 <h2 class="main-title">~ Ta kontakt ~</h2>
                 <hr>
-                <p>Send forespørselen din her. Vi vil svare så snart som mulig.</p>
+                <p>Velg en artist og send inn forespørselen din her. Vi svarer så snart som mulig.</p>
             </div>
             <div class="gap"></div>
             <div class="row">
@@ -150,8 +150,7 @@
                     <h4>Partnere</h4>
                     <div>
                         <ul class="arrow">
-                            <li><a href="#">Website 1</a></li>
-                            <li><a href="#">Website 2</a></li>
+                            <li><a href="//tritonosmusikk.no/">Tritonos Musikksenter</a></li>
                             <li><a href="https://simplephpscripts.com">SimplePHPscripts</a></li>
                             <li><a href="/admin">Admin</a></li>
                         </ul>
