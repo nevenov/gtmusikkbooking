@@ -44,7 +44,7 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="center team-member">
                         <div class="team-image">
-                            <img class="img-responsive img-thumbnail bounce-in" src="{{$category->photo ? $category->photo->file : $category->frontPhotoPlaceholder()}}" alt="">
+                            <img class="img-responsive img-thumbnail bounce-in" src="{{ $category->photo ? $category->photo->file : $category->frontPhotoPlaceholder() }}" alt="">
                             <div class="overlay">
                                 <a class="preview btn btn-outlined btn-primary" href="/gruppe/{{ $category->slug }}"><i class="fa fa-link"></i></a>
                             </div>

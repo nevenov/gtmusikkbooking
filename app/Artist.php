@@ -89,6 +89,12 @@ class Artist extends Model
 
     }
 
+    public function frontArtistPlaceholder(){
+
+        return "https://i.pravatar.cc/800?img=55";
+
+    }
+
 
 
 }

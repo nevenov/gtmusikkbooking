@@ -23,6 +23,10 @@ Route::get('/', 'FrontCategoriesController@index')->name('index');
 
 Route::get('/gruppe/{id}', ['as'=>'categories.gruppe', 'uses'=>'FrontCategoriesController@show']);
 
+
+Route::get('artist/{id}', ['as'=>'artist.show', 'uses'=>'FrontArtistsController@show']);
+
+
 Auth::routes(['verify' => true, 'register' => false]);
 
 

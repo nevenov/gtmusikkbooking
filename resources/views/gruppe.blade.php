@@ -41,9 +41,9 @@
                         <img src="{{$artist->photo ? $artist->photo->file : $artist->frontPhotoPlaceholder()}}" alt="">
                         {{--<h5>{{ $artist->title }}</h5>--}}
                         <div class="overlay">
-                            <a class="preview btn btn-outlined btn-primary" href=""><i class="fa fa-link"></i></a>
+                            <a class="preview btn btn-outlined btn-primary" href="{{ route('artist.show', $artist->id) }}"><i class="fa fa-link"></i></a>
                         </div>
-                        <h5><a href="">{{ $artist->initials ? $artist->initials : $artist->title }}</a></h5>
+                        <h5><a href="{{ route('artist.show', $artist->id) }}">{{ $artist->initials ? $artist->initials : $artist->title }}</a></h5>
 
                         @if($artist->audio)
                             <div class="row row-audio">
