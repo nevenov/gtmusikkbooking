@@ -11,7 +11,7 @@
                 <aside class="col-sm-3 col-sm-push-9">
 
                     <div class="widget categories">
-                        <h3 class="widget-title">Artists Groups</h3>
+                        <h3 class="widget-title">Artists Groups </h3>
                         <div class="row">
                             <div class="col-sm-12">
                                 <ul class="arrow">
@@ -36,7 +36,7 @@
                                 </div>
                             </div>
                             <div class="blog-content">
-                                <h3 class="main-title">Civility vicinity graceful is it at.</h3>
+                                <h3 class="main-title">{{ $artist->title }}</h3>
                                 <div class="entry-meta">
                                     <span><i class="fa fa-user"></i> <a href="#"> Danny Jones</a></span>
                                     <span><i class="fa fa-folder"></i> <a href="#"> Style</a></span>

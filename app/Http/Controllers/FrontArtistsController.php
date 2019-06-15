@@ -27,7 +27,14 @@ class FrontArtistsController extends Controller
      */
     public function show($id)
     {
-        $artist = Artist::where('id', $id)->get();
+        $artist = Artist::where([
+            ['id', '=', $id],
+            ['status', '=', 'active']
+        ])->firstOrFail();
+
+        //$artist = Artist::findOrFail($id);
+
+        //dd($artist);
         return view('artist', compact('artist'));
     }
 
