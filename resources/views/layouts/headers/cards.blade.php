@@ -31,7 +31,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col">
-                                    <a href="{{ route('admin.artists.index') }}"><h5 class="card-title text-uppercase text-muted mb-0">Групи</h5></a>
+                                    <a href="{{ route('admin.categories.index') }}"><h5 class="card-title text-uppercase text-muted mb-0">Групи</h5></a>
                                     <span class="h2 font-weight-bold mb-0">{{ count($categoriesall) }}</span>
                                 </div>
                                 <div class="col-auto">

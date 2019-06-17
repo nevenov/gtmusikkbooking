@@ -18,7 +18,7 @@
 
                                     @if(count($categories)>0)
                                         @foreach($categories as $category)
-                                        <li><a href="{{ route('categories.gruppe'), $category->slug }}">{{ $category->name }}</a></li>
+                                        <li><a href="/gruppe/{{ $category->slug }}">{{ $category->name }}</a></li>
                                         @endforeach
                                     @endif
 

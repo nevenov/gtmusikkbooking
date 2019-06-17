@@ -21,7 +21,7 @@ use App\Artist;
 Route::get('/', 'FrontCategoriesController@index')->name('index');
 
 
-Route::get('/gruppe/{id}', ['as'=>'categories.gruppe', 'uses'=>'FrontCategoriesController@show']);
+Route::get('/gruppe/{id}', 'FrontCategoriesController@show')->name('gruppe.name');
 
 
 Route::get('artist/{id}', ['as'=>'artist.show', 'uses'=>'FrontArtistsController@show']);

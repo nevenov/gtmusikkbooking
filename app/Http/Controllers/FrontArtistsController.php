@@ -33,7 +33,7 @@ class FrontArtistsController extends Controller
             ['status', '=', 'active']
         ])->firstOrFail();
 
-        $categories = Category::all();
+        $categories = Category::orderBy('created_at', 'asc')->get();
 
         //$artist = Artist::findOrFail($id);
 
