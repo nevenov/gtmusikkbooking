@@ -27,7 +27,7 @@ DB_PASSWORD=secret
 with your database, user and password. If you are using WAMP or XAMPP the defaults are localhost, root and no password.
 
 8. Go to the terminal(git bash) again and run:  
-```php artisan migrate -seed```  
+```php artisan migrate --seed```  
 This will create database tables and will add initial admin user:  
 Username: test@email.com  
 Password: secret  
