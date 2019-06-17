@@ -77,12 +77,6 @@ class Artist extends Model
     }
 
 
-    public function audioPlaceholder(){
-
-        return "https://i.pravatar.cc/80?img=55";
-
-    }
-
     public function frontPhotoPlaceholder(){
 
         return "https://i.pravatar.cc/300?img=55";
@@ -91,7 +85,7 @@ class Artist extends Model
 
     public function frontArtistPlaceholder(){
 
-        return "https://i.pravatar.cc/800?img=55";
+        return "https://via.placeholder.com/1024x500";
 
     }
 

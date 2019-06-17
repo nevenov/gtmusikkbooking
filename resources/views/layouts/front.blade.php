@@ -94,12 +94,10 @@
             <div class="row">
                 <div class="col-md-4 fade-up">
                     <h3>Kontakt</h3>
-                    <p><span class="icon icon-home"></span>Time Square, New York<br/>
-                        <span class="icon icon-phone"></span>+36 65984 405<br/>
-                        <span class="icon icon-mobile"></span>+36 65984 405<br/>
-                        <span class="icon icon-envelop"></span> <a href="#">email@infinityteam.com</a> <br/>
-                        <span class="icon icon-twitter"></span> <a href="#">@infinityteam.com</a> <br/>
-                        <span class="icon icon-facebook"></span> <a href="#">Infinity Agency</a> <br/>
+                    <p><span class="icon icon-home"></span>George Makedonov<br/>
+                        <span class="icon icon-phone"></span>+47 916 95 449<br/>
+                        <span class="icon icon-envelop"></span> <a href="mailto:gt-music@online.no">gt-music@online.no</a> <br/>
+                        G.T.MUSIKKBOOKING <br/>
                     </p>
                 </div><!-- col -->
 
@@ -137,9 +135,10 @@
                     <h4>Kontakt oss</h4>
                     <address>
                         <strong>Norge</strong><br>
-                        Carl Platous gt.4,<br>
-                        3511 Hønefoss<br>
-                        <abbr title="Phone"><i class="fa fa-phone"></i></abbr> +47 916 95 449
+                        Carl Platous gt.4, 3511 Hønefoss<br>
+                        <abbr title="Phone"><i class="fa fa-phone"></i></abbr> +47 916 95 449<br>
+                        <abbr title="Email"><i class="fa fa-envelope"></i></abbr> gt-music@online.no<br>
+                        George Makedonov<br>
                     </address>
 
                 </div><!--/.col-md-3-->
