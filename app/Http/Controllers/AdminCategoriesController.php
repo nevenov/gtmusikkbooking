@@ -28,7 +28,8 @@ class AdminCategoriesController extends Controller
     public function create()
     {
         //
-        return view('admin.categories.create');
+        $levels = Category::where('parent_id', 0)->orderBy('created_at', 'asc')->get();
+        return view('admin.categories.create', compact('levels'));
     }
 
     /**
@@ -42,7 +43,9 @@ class AdminCategoriesController extends Controller
         //
         $input = $request->all();
 
-        if($file = $request->file('photo_id')){
+        //dd($input);
+
+        if($file = $request->file('photo_id') && $input['parent_id']==0){
 
             $name = time() . $file->getClientOriginalName();
 
@@ -80,7 +83,9 @@ class AdminCategoriesController extends Controller
         //
         $category = Category::findOrFail($id);
 
-        return view('admin.categories.edit', compact('category'));
+        $levels = Category::where('parent_id', 0)->orderBy('created_at', 'asc')->get();
+
+        return view('admin.categories.edit', compact('category', 'levels'));
 
 //        dd($category);
     }

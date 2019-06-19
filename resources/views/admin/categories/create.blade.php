@@ -40,6 +40,21 @@
                                 </div>
 
 
+                                <div class="form-row mt-5">
+                                    <div class="form-group col-md-10">
+                                        <label class="form-control-label" for="input-parent_id">{{ __('Група или подгрупа?') }}</label>
+                                        <div class="controls">
+                                            <select class="custom-select mr-sm-2" name="parent_id" id="input-parent_id" style="max-width: 400px;">
+                                                <option value="0">Група</option>
+                                            @foreach($levels as $parent)
+                                                <option value="{{ $parent->id }}">Подгрупа на {{ $parent->name }}</option>
+                                            @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+
                                 <div class="text-left">
                                     <button type="submit" class="btn btn-success mt-4">{{ __('Save') }}</button>
                                 </div>

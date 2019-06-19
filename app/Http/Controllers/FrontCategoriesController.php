@@ -15,7 +15,7 @@ class FrontCategoriesController extends Controller
     public function index()
     {
         //
-        $categories = Category::orderBy('created_at', 'asc')->get();
+        $categories = Category::where('parent_id', 0)->orderBy('created_at', 'asc')->get();
         return view('index', compact('categories'));
     }
 

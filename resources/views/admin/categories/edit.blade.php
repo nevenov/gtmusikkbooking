@@ -67,6 +67,19 @@
 
                                 <div class="clearfix"></div>
 
+
+                                <div class="form-row mt-5">
+                                    <div class="form-group">
+                                        <label class="mr-sm-2" for="input-parent_id">{{ __('Група или подгрупа?') }}</label>
+                                        <select class="custom-select mr-sm-2" name="parent_id" id="input-parent_id">
+                                                <option value="0">Група</option>
+                                            @foreach($levels as $val)
+                                                <option value="{{ $val->id }}"{{ ((isset($category->parent_id) && $category->parent_id==$val->id) ? " selected":"") }}>Подгрупа на {{ $val->name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+
                                 <div class="text-left">
                                     <button type="submit" class="btn btn-success mt-4">{{ __('Save') }}</button>
                                 </div>

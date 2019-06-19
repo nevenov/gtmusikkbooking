@@ -35,6 +35,7 @@
                             <tr>
                                 <th scope="col">{{ __('Снимка') }}</th>
                                 <th style="width: 35%" scope="col">{{ __('Име') }}</th>
+                                <th scope="col">{{ __('Подргрупа') }}</th>
                                 <th scope="col">{{ __('Добавена на') }}</th>
                                 <th scope="col">{{ __('Редактирана на') }}</th>
                                 <th scope="col"></th>
@@ -46,6 +47,8 @@
                                     <td><img height="50" src="{{ $category->photo ? $category->photo->file : $category->photoPlaceholder() }}" alt="{{ $category->title }}"></td>
 
                                     <th scope="col"><a href="{{ route('admin.categories.edit', $category->id) }}">{{ $category->name }}</a></th>
+
+                                    <th scope="col">{{ $category->parent_id }}</th>
 
                                     <td>{{ $category->created_at->format('d M Y H:i') }}</td>
                                     <td>{{ $category->updated_at->format('d M Y H:i') }}</td>
