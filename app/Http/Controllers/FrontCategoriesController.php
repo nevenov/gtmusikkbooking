@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Artist;
 use App\Category;
 use Illuminate\Http\Request;
 
@@ -33,14 +34,31 @@ class FrontCategoriesController extends Controller
         $category = Category::findBySlugOrFail($slug);
 
         if ($category->parent_id == 0) {
-            $subCategories = Category::where('parent_id', $category->id)->get();
+
+            $cat_ids[] = $category->id;
+
+            if(count($category->children)>0){
+
+                foreach ($category->children as $children) {
+                    $cat_ids[] = $children->id;
+                    $subCategories[] = $children->id;
+                }
+            }
+
+            //print_r($cat_ids); die;
+//            $artists = $category->artists()->whereIn('category_id', $cat_ids)->where('status', 'active')->get();
+            $artists = Artist::whereIn('category_id', $cat_ids)->get();
+            //dd($artists); die;
+
+
         } else {
             $subCategories = [];
+            $artists = $category->artists()->where('status', 'active')->get();
         }
 
-        //dd($subCategories);
+//        dd($subCategories); die;
 
-        $artists = $category->artists()->where('status', 'active')->get();
+
 
         return view('gruppe', compact('category', 'artists', 'subCategories'));
     }

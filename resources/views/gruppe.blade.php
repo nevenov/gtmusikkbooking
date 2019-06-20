@@ -13,14 +13,16 @@
                 <p>Lytt til en artist, lytt til hans demonstrasjon og ring oss:</p>
             </div>
 
-            @if(isset($subCategories) && count($subCategories)>0)
-            <ul class="portfolio-filter fade-down center">
-                <li><a class="btn btn-outlined btn-primary active" href="#" data-filter="*">All</a></li>
-                @foreach($subCategories as $subCategory)
-                <li><a class="btn btn-outlined btn-primary" href="#" data-filter=".{{ $subCategory->parent_id }}">{{ $subCategory->name }}</a></li>
-                @endforeach
-            </ul><!--/#portfolio-filter-->
-            @endif
+            {{--{{print_r($subCategories)}}--}}
+            {{--@if(isset($subCategories) && count($subCategories)>0)--}}
+            {{--<ul class="portfolio-filter fade-down center">--}}
+                {{--<li><a class="btn btn-outlined btn-primary active" href="#" data-filter="*">All</a></li>--}}
+                {{--@foreach($subCategories as $subCategory)--}}
+                    {{--{{ print_r($subCategory) }}--}}
+                {{--<li><a class="btn btn-outlined btn-primary" href="#" data-filter=".{{ $subCategory->parent_id }}">{{ $subCategory->name }}</a></li>--}}
+                {{--@endforeach--}}
+            {{--</ul><!--/#portfolio-filter-->--}}
+            {{--@endif--}}
 
 
             @if(count($artists)>0)
