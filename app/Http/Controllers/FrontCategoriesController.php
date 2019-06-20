@@ -32,9 +32,17 @@ class FrontCategoriesController extends Controller
         //
         $category = Category::findBySlugOrFail($slug);
 
+        if ($category->parent_id == 0) {
+            $subCategories = Category::where('parent_id', $category->id)->get();
+        } else {
+            $subCategories = [];
+        }
+
+        //dd($subCategories);
+
         $artists = $category->artists()->where('status', 'active')->get();
 
-        return view('gruppe', compact('category', 'artists'));
+        return view('gruppe', compact('category', 'artists', 'subCategories'));
     }
 
 

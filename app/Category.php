@@ -49,4 +49,17 @@ class Category extends Model
         return "https://i.pravatar.cc/300?img=55";
 
     }
+
+
+
+
+    public function parent()
+    {
+        return $this->belongsTo('App\Category', 'parent_id');
+    }
+
+    public function children()
+    {
+        return $this->hasMany('App\Category', 'parent_id');
+    }
 }

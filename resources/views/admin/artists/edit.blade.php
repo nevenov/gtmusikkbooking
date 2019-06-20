@@ -46,7 +46,10 @@
                                         <label class="mr-sm-2" for="input-category_id">{{ __('Група') }}</label>
                                         <select class="custom-select mr-sm-2" name="category_id" id="input-category_id">
                                             @foreach($categories as $category)
-                                                <option value="{{ $category->id }}"{{ ((isset($artist->category_id) && $artist->category_id==$category->id) ? " selected":"") }}>{{ $category->name }}</option>
+                                                <option value="{{ $category->id }}"{{ ((isset($artist->category_id) && $artist->category_id==$category->id) ? " selected":"") }} {{count($category->children)>0 ? " disabled" : ""}}>{{ $category->name }}</option>
+                                                @foreach ($category->children as $children)
+                                                    <option value="{{ $children->id }}"{{ ((isset($artist->category_id) && $artist->category_id==$children->id) ? " selected":"") }}> &nbsp;--&nbsp;{{ $children->name }}</option>
+                                                @endforeach
                                             @endforeach
                                         </select>
                                     </div>

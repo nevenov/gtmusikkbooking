@@ -30,7 +30,7 @@ class AdminArtistsController extends Controller
     public function create()
     {
         //
-        $categories = Category::orderBy('created_at', 'asc')->get();
+        $categories = Category::where('parent_id', 0)->orderBy('created_at', 'asc')->get();
 
         return view('admin.artists.create', compact('categories'));
     }
@@ -110,7 +110,7 @@ class AdminArtistsController extends Controller
         //
         $artist = Artist::findOrFail($id);
 
-        $categories = Category::orderBy('created_at', 'asc')->get();
+        $categories = Category::where('parent_id', 0)->orderBy('created_at', 'asc')->get();
 
         return view('admin.artists.edit', compact('artist', 'categories'));
 

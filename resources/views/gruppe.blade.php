@@ -12,12 +12,15 @@
                 <hr>
                 <p>Lytt til en artist, lytt til hans demonstrasjon og ring oss:</p>
             </div>
-            {{--<ul class="portfolio-filter fade-down center">--}}
-                {{--<li><a class="btn btn-outlined btn-primary active" href="#" data-filter="*">All</a></li>--}}
-                {{--<li><a class="btn btn-outlined btn-primary" href="#" data-filter=".1">One man</a></li>--}}
-                {{--<li><a class="btn btn-outlined btn-primary" href="#" data-filter=".2">Duo</a></li>--}}
-                {{--<li><a class="btn btn-outlined btn-primary" href="#" data-filter=".3">Trio</a></li>--}}
-            {{--</ul><!--/#portfolio-filter-->--}}
+
+            @if(isset($subCategories) && count($subCategories)>0)
+            <ul class="portfolio-filter fade-down center">
+                <li><a class="btn btn-outlined btn-primary active" href="#" data-filter="*">All</a></li>
+                @foreach($subCategories as $subCategory)
+                <li><a class="btn btn-outlined btn-primary" href="#" data-filter=".{{ $subCategory->parent_id }}">{{ $subCategory->name }}</a></li>
+                @endforeach
+            </ul><!--/#portfolio-filter-->
+            @endif
 
 
             @if(count($artists)>0)
@@ -36,7 +39,7 @@
                         {{--</div>--}}
                     {{--</li><!--/.portfolio-item-->--}}
 
-                <li class="portfolio-item {{ $loop->iteration }} isotope-item col-md-4">
+                <li class="portfolio-item {{ $artist->category_id }} isotope-item col-md-4">
                     <div class="item-inner">
                         <img src="{{$artist->photo ? $artist->photo->file : $artist->frontPhotoPlaceholder()}}" alt="">
                         {{--<h5>{{ $artist->title }}</h5>--}}

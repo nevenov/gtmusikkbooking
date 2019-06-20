@@ -57,8 +57,12 @@ class AdminCategoriesController extends Controller
         }
 
         Category::create($input);
+        if($input['parent_id']>0) {
+            return redirect('/admin/categories')->with('status', 'Подгрупата е създадена успешно.');
+        } else {
+            return redirect('/admin/categories')->with('status', 'Групата е създадена успешно.');
+        }
 
-        return redirect('/admin/categories')->with('status', 'Категорията е създадена успешно.');
     }
 
     /**
