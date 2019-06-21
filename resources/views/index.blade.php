@@ -12,15 +12,61 @@
                     <div class="center gap fade-down section-heading">
                         <h2 class="main-title">~ Om oss ~</h2>
                         <hr>
-                        <p>We started our business 20 years ago.</p>
+                        <p>Virksomheten startet for 20 år siden.</p>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-10 col-md-offset-1 fade-up">
-                    <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.</p>
+                    <p>
+                        GT Musikk Booking består av to musikere med bred erfaring fra bransjen.
+                        Vi kan bidra med gode løsninger for både musikere og arrangører til alle typer arrangementer.
+                    </p>
 
-                    <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.</p>
+                    <p>
+                        Topp kvalitet, over 350 musikere, service og ikke minst deres budsjett!
+                        Det lønner seg å være raskt ute med bestillingen!
+                        GT Musikk Booking er answarlig for musikerens kvalitet.
+                    </p>
+
+                    <p>
+                        Med dette håper vi at du kan finne noe til ditt arrangement, stort eller lite.
+                        Vi kan være behjelpelig med å skaffe artister/orkester - lokalt, nasjonalt og internasjonalt.
+                    </p>
+
+                    <p>
+                        Vi leverer alt innen:
+
+                            <div class="col-md-4">
+                                <ul class="about-us-list">
+                                    <li>Bryllup</li>
+                                    <li>Dansearrangementer</li>
+                                    <li>Hotell og Restaurantmusikere</li>
+                                    <li>Pianobarentertainere</li>
+                                    <li>Taffelmusikere</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4">
+                                <ul class="about-us-list">
+                                    <li>Pubmusikere</li>
+                                    <li>Countrymusikere</li>
+                                    <li>Pop-Rock musikere</li>
+                                    <li>Jazzmusikere</li>
+                                    <li>Klassisk Musik</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4">
+                                <ul class="about-us-list">
+                                    <li>DJ / Karaoke</li>
+                                    <li>Barneunderholdning</li>
+                                    <li>Event Lyd og Lys</li>
+                                    <li>Utleie Lyd og Lysutstyr</li>
+                                    <li>Alle typer artister m.m</li>
+                                </ul>
+                            </div>
+
+
+                    </p>
                 </div>
                 <div class="col-md-4 fade-up">
 

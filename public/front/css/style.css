@@ -2391,6 +2391,12 @@ img.author-box-image {
 }
 
 
+ul.about-us-list {
+    margin-bottom: 0;
+}
+ul.about-us-list li {
+    list-style-type: circle;
+}
 
 
 
