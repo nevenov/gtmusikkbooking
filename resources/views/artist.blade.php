@@ -16,8 +16,8 @@
                             <div class="col-sm-12">
                                 <ul class="arrow">
 
-                                    @if(count($categories)>0)
-                                        @foreach($categories as $category)
+                                    @if(count($categoriesall)>0)
+                                        @foreach($categoriesall as $category)
                                         <li><a href="/gruppe/{{ $category->slug }}">{{ $category->name }}</a></li>
                                         @endforeach
                                     @endif

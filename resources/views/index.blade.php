@@ -12,7 +12,10 @@
                     <div class="center gap fade-down section-heading">
                         <h2 class="main-title">~ Om oss ~</h2>
                         <hr>
-                        <p>Virksomheten startet for 20 år siden.</p>
+                        <p>
+                            Carl Platous gate 4, 3511 Hønefoss <span style="font-size: 12px;">&#9679;</span>
+                            Tlf: +47 916 95 449 <span style="font-size: 12px;">&#9679;</span> Mob:+47 915 26 43
+                        </p>
                     </div>
                 </div>
             </div>

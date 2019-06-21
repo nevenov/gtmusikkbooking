@@ -94,10 +94,16 @@
             <div class="row">
                 <div class="col-md-4 fade-up">
                     <h3>Kontakt</h3>
-                    <p><span class="icon icon-home"></span>George Makedonov<br/>
+                    <p>
+                        <span class="icon icon-home"></span>George Makedonov<br/>
                         <span class="icon icon-phone"></span>+47 916 95 449<br/>
-                        <span class="icon icon-envelop"></span> <a href="mailto:gt-music@online.no">gt-music@online.no</a> <br/>
-                        G.T.MUSIKKBOOKING <br/>
+                        <span class="icon icon-envelop"></span> <a href="mailto:gt-music@online.no">gt-music@online.no</a>
+                        <br/><br/>
+
+                        <span class="icon icon-home"></span>Vesa Makedonova<br/>
+                        <span class="icon icon-phone"></span>+47 915 26 43<br/>
+                        <span class="icon icon-envelop"></span> <a href="mailto:vesai@online.no">vesai@online.no</a> <br/>
+
                     </p>
                 </div><!-- col -->
 
@@ -125,13 +131,6 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3 col-sm-6 about-us-widget">
-                    <h4 style="margin: 30px 0;">Global dekning</h4>
-                    <p>Vi kan formidle sangere, artister og musikere fra hele verden.</p>
-                </div><!--/.col-md-3-->
-
-                <div class="col-md-2"></div>
-
-                <div class="col-md-3 col-sm-6">
                     <h4>Kontakt oss</h4>
                     <address>
                         <strong>Norge</strong><br>
@@ -140,10 +139,23 @@
                         <abbr title="Email"><i class="fa fa-envelope"></i></abbr> gt-music@online.no<br>
                         George Makedonov<br>
                     </address>
-
                 </div><!--/.col-md-3-->
 
                 <div class="col-md-1"></div>
+
+                <div class="col-md-3 col-sm-6 about-us-widget">
+                    <h4>&nbsp;</h4>
+                    <address>
+                        <strong>Norge</strong><br>
+                        Carl Platous gt.4, 3511 Hønefoss<br>
+                        <abbr title="Phone"><i class="fa fa-phone"></i></abbr> +47 915 26 43<br>
+                        <abbr title="Email"><i class="fa fa-envelope"></i></abbr> vesai@online.no<br>
+                        Vesa Makedonova<br>
+                    </address>
+
+                </div><!--/.col-md-3-->
+
+                <div class="col-md-2"></div>
 
                 <div class="col-md-3 col-sm-6">
                     <h4>Partnere</h4>
