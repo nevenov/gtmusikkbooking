@@ -37,8 +37,8 @@
 
                                 <tr>
                                     <td><img height="50" src="{{ $artist->photo ? $artist->photo->file : $artist->photoPlaceholder() }}" alt="{{ $artist->title }}"></td>
-                                    <th scope="row">{{  $artist->initials . " / " . $artist->title }}</th>
-                                    <td>{{ $artist->category_id }}</td>
+                                    <th scope="row"><a href="{{ route('admin.artists.edit', $artist->id) }}">{{  $artist->initials . " / " . $artist->title }}</a></th>
+                                    <td>{{ $artist->category->parent ? $artist->category->parent['name']." / " : '' }}<span class="text-dark">{{ $artist->category->name }}</span></td>
                                     <td><span class="{{ $artist->status=='active' ? 'text-success' : 'text-danger' }}">
                                         {{ $artist->status=='active' ? '' : 'не' }}активен
                                         </span>

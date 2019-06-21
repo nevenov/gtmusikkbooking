@@ -45,7 +45,7 @@ class AdminCategoriesController extends Controller
 
         //dd($input);
 
-        if($file = $request->file('photo_id') && $input['parent_id']==0){
+        if($file = $request->file('photo_id')){
 
             $name = time() . $file->getClientOriginalName();
 

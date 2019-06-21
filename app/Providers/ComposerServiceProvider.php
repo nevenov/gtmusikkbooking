@@ -31,8 +31,11 @@ class ComposerServiceProvider extends ServiceProvider
             $artistsall = Artist::all();
             $view->with('artistsall', $artistsall);
 
-            $categoriesall = Category::all();
+            $categoriesall = Category::where('parent_id', 0)->get();
             $view->with('categoriesall', $categoriesall);
+
+            $subcategoriesall = Category::where('parent_id', '>', 0)->get();
+            $view->with('subcategoriesall', $subcategoriesall);
 
         });
     }

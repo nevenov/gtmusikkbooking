@@ -34,8 +34,8 @@
                             <thead class="thead-light">
                             <tr>
                                 <th scope="col">{{ __('Снимка') }}</th>
-                                <th style="width: 35%" scope="col">{{ __('Име') }}</th>
-                                <th scope="col">{{ __('Подргрупа') }}</th>
+                                <th style="width: 35%" scope="col">{{ __('Група/Подгрупа') }}</th>
+                                {{--<th scope="col">{{ __('Подргрупа') }}</th>--}}
                                 <th scope="col">{{ __('Добавена на') }}</th>
                                 <th scope="col">{{ __('Редактирана на') }}</th>
                                 <th scope="col"></th>
@@ -46,9 +46,11 @@
                                 <tr>
                                     <td><img height="50" src="{{ $category->photo ? $category->photo->file : $category->photoPlaceholder() }}" alt="{{ $category->title }}"></td>
 
-                                    <th scope="col"><a href="{{ route('admin.categories.edit', $category->id) }}">{{ $category->name }}</a></th>
+                                    <th scope="col"><a href="{{ route('admin.categories.edit', $category->id) }}">{{ $category->parent ? $category->parent['name']." / " : '' }}{{ $category->name }}</a></th>
 
-                                    <th scope="col">{{ $category->parent_id }}</th>
+                                    {{--<th scope="col">--}}
+                                        {{--{{ $category->parent ? $category->parent['name'] : '-' }}--}}
+                                    {{--</th>--}}
 
                                     <td>{{ $category->created_at->format('d M Y H:i') }}</td>
                                     <td>{{ $category->updated_at->format('d M Y H:i') }}</td>
