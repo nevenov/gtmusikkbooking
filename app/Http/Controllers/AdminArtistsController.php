@@ -19,6 +19,8 @@ class AdminArtistsController extends Controller
     {
         //
         $artists = Artist::orderBy('title', 'asc')->paginate(50);
+
+
         return view('admin.artists.index', compact('artists'));
     }
 

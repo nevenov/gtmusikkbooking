@@ -52,22 +52,29 @@
                                 <th scope="col">{{ __('Статус') }}</th>
                                 <th scope="col">{{ __('Добавен на') }}</th>
                                 <th scope="col">{{ __('Редактиран на') }}</th>
-                                <th scope="col"></th>
+                                <th scope="col" class="px-0"></th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach ($artists as $artist)
                                 <tr>
-                                    <td><img height="50" src="{{ $artist->photo ? $artist->photo->file : $artist->photoPlaceholder() }}" alt="{{ $artist->title }}"></td>
+                                    <td class="pr-0"><img height="50" src="{{ $artist->photo ? $artist->photo->file : $artist->photoPlaceholder() }}" alt="{{ $artist->title }}"></td>
                                     <th scope="col"><a href="{{ route('admin.artists.edit', $artist->id) }}">{{ $artist->initials . " / " . $artist->title }}</a></th>
-                                    <td>{{ $artist->category->name }}</td>
-                                    <td><span class="{{ $artist->status=='active' ? 'text-success' : 'text-danger' }}">
+
+                                    <td class="pr-0">
+                                        {!! ($artist->category->parent ? ($artist->category->parent['name'])."/" : '').'<span class="text-dark">'.$artist->category->name.'</span>' !!}
+
+
+
+                                    </td>
+
+                                    <td class="pr-0"><span class="{{ $artist->status=='active' ? 'text-success' : 'text-danger' }}">
                                         {{ $artist->status=='active' ? '' : 'не' }}активен
                                         </span>
                                     </td>
                                     <td>{{ $artist->created_at->format('d M Y') }}</td>
                                     <td>{{ $artist->updated_at->format('d M Y') }}</td>
-                                    <td class="text-right">
+                                    <td class="text-right px-0">
                                         <div class="dropdown">
                                             <a class="btn btn-sm btn-icon-only text-light" href="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 <i class="fas fa-ellipsis-v"></i>
