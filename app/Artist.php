@@ -90,6 +90,20 @@ class Artist extends Model
     }
 
 
+    public function youtubeEmbed($video1){
+
+        $parsedURL = parse_url($video1, PHP_URL_QUERY);
+
+        parse_str($parsedURL, $output);
+
+        return $output['v'];
+
+//        return "<iframe id='ytplayer' type='text/html' width='' height='0' src='{$video1}'
+//frameborder='0' allowfullscreen>";
+
+//        return "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/{$output['v']}\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>";
+
+    }
 
 
 }

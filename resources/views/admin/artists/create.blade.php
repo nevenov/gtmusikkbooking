@@ -37,7 +37,7 @@
 
                                                 <option value="{{ $category->id }}" {{count($category->children)>0 ? " disabled" : ""}}>{{ $category->name }}</option>
                                                 @foreach ($category->children as $children)
-                                                    <option value="{{ $children->id }}"> &nbsp;--&nbsp;{{ $children->name }}</option>
+                                                    <option value="{{ $children->id }}"> --&nbsp;Подгрупа --&nbsp;{{ $children->name }}</option>
                                                 @endforeach
                                             @endforeach
                                         </select>

@@ -113,11 +113,10 @@
                     <br>
                     <div id="message"></div>
                     <form method="post" action="sendemail.php" id="contactform">
-                        <input type="text" name="name" id="name" placeholder="Name" />
-                        <input type="text" name="email" id="email" placeholder="Email" />
-                        <input type="text" name="website" id="website" placeholder="Website" />
+                        <input type="text" name="name" id="name" placeholder="Name" value="{{ old('name') }}" />
+                        <input type="text" name="email" id="email" placeholder="Email" value="{{ old('email') }}" />
                         <textarea name="comments" id="comments" placeholder="Comments"></textarea>
-                        <input class="btn btn-outlined btn-primary" type="submit" name="submit" value="Submit" />
+                        <input class="btn btn-outlined btn-primary" type="submit" name="submit" value="Sende melding" />
                     </form>
                 </div><!-- col -->
             </div><!-- row -->
