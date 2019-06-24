@@ -111,12 +111,29 @@
                     <h3>Send oss en melding</h3>
                     <br>
                     <br>
-                    <div id="message"></div>
-                    <form method="post" action="sendemail.php" id="contactform">
+                    @if (session('message'))
+                    <div class="alert alert-success" role="alert" id="message">{{ session('message') }}</div>
+                    @endif
+
+                    <form method="POST" action="/contact" id="contactform">
+
+
+                        <div class="text-danger">{{ $errors->first('name') }}</div>
                         <input type="text" name="name" id="name" placeholder="Name" value="{{ old('name') }}" />
+
+
+                        <div class="text-danger">{{ $errors->first('email') }}</div>
                         <input type="text" name="email" id="email" placeholder="Email" value="{{ old('email') }}" />
-                        <textarea name="comments" id="comments" placeholder="Comments"></textarea>
-                        <input class="btn btn-outlined btn-primary" type="submit" name="submit" value="Sende melding" />
+
+
+                        <div class="text-danger">{{ $errors->first('comments') }}</div>
+                        <textarea name="comments" id="comments" placeholder="Comments">{{ old('comments') }}</textarea>
+
+
+                        @csrf
+
+                        <input class="btn btn-outlined btn-primary" type="submit" value="Sende melding" />
+
                     </form>
                 </div><!-- col -->
             </div><!-- row -->
