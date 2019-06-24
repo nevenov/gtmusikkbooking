@@ -2143,7 +2143,7 @@ img.author-box-image {
 #contactform textarea#comments {
     width: 100%;
     padding: 10px 5px;
-    margin-bottom: 15px;
+    margin-top: 20px;
     background-color: rgba(0, 0, 0, 0.1);
     color: #202020;
     border: none;
@@ -2170,12 +2170,22 @@ img.author-box-image {
     padding: 0;
 }
 
+#contactform .error {
+    color: red;
+}
+
 .form-control {
     padding: 10px 5px;
     background-color: rgba(0, 0, 0, 0.1);
     color: #202020;
     border: none;
     border-radius: 0;
+}
+
+.mt-3 {
+
+    margin-top: 30px;
+
 }
 
 

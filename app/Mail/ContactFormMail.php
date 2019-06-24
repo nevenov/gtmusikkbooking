@@ -30,6 +30,6 @@ class ContactFormMail extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.contact.contact-form');
+        return $this->subject("Ny forespørsel fra gtmusikkbooking.com")->from($this->data['email'])->replyTo($this->data['email'])->markdown('emails.contact.contact-form');
     }
 }

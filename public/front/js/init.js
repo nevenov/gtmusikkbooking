@@ -185,32 +185,52 @@ $(document).ready(function() {
 /*-----------------------------------------------------------------------------------*/
 /*  CONTACT FORM
 /*-----------------------------------------------------------------------------------*/
-// jQuery(document).ready(function($){
-// 'use strict';
-//
-//   $('#contactform').submit(function(){
-//     var action = $(this).attr('action');
-//     $("#message").slideUp(750,function() {
-//     $('#message').hide();
-//     $('#submit').attr('disabled','disabled');
-//     $.post(action, {
-//       name: $('#name').val(),
-//       email: $('#email').val(),
-//       comments: $('#comments').val()
-//     },
-//       function(data){
-//         document.getElementById('message').innerHTML = data;
-//         $('#message').slideDown('slow');
-//         $('#submit').removeAttr('disabled');
-//         if(data.match('success') != null) $('#contactform').slideUp('slow');
-//         $(window).trigger('resize');
-//       }
-//     );
-//     });
-//     return false;
-//   });
-//
-// });
+jQuery(document).ready(function($){
+
+    if ($("#contactform").length > 0) {
+        $("#contactform").validate({
+
+            rules: {
+                name: {
+                    required: true,
+                    maxlength: 80
+                },
+
+                comments: {
+                    required: true,
+                    //digits:true,
+                    //minlength: 6,
+                    maxlength:1000,
+                },
+                email: {
+                    required: true,
+                    maxlength: 100,
+                    email: true,
+                },
+            },
+            messages: {
+
+                name: {
+                    required: "Please enter name",
+                    maxlength: "Your last name maxlength should be 80 characters long."
+                },
+                comments: {
+                    required: "Please enter your message",
+                    //minlength: "The contact number should be 10 digits",
+                    //digits: "Please enter only numbers",
+                    maxlength: "The message should be maximum 1000 characters",
+                },
+                email: {
+                    required: "Please enter valid email",
+                    email: "Please enter valid email",
+                    maxlength: "The email name should less than or equal to 50 characters",
+                },
+
+            },
+        })
+    }
+
+});
 
 /*-----------------------------------------------------------------------------------*/
 /*  PRELOADER

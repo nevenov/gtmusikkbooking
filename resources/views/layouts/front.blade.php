@@ -13,6 +13,7 @@
     <link href="{{ asset('front') }}/css/animate.css" rel="stylesheet">
     <link href="{{ asset('front') }}/css/style.css" rel="stylesheet">
     <script src="{{ asset('front') }}/js/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
     <!--[if lt IE 9]>
     <script src="{{ asset('front') }}/js/html5shiv.js"></script>
     <script src="{{ asset('front') }}/js/respond.min.js"></script>
@@ -112,27 +113,30 @@
                     <br>
                     <br>
                     @if (session('message'))
-                    <div class="alert alert-success" role="alert" id="message">{{ session('message') }}</div>
+                    <div class="alert alert-success alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <strong>{{ session('message') }}</strong>
+                    </div>
                     @endif
 
-                    <form method="POST" action="/contact" id="contactform">
-
-
-                        <div class="text-danger">{{ $errors->first('name') }}</div>
-                        <input type="text" name="name" id="name" placeholder="Name" value="{{ old('name') }}" />
-
-
-                        <div class="text-danger">{{ $errors->first('email') }}</div>
-                        <input type="text" name="email" id="email" placeholder="Email" value="{{ old('email') }}" />
-
-
-                        <div class="text-danger">{{ $errors->first('comments') }}</div>
-                        <textarea name="comments" id="comments" placeholder="Comments">{{ old('comments') }}</textarea>
-
+                    <form method="POST" action="/contact#contact" id="contactform">
 
                         @csrf
 
-                        <input class="btn btn-outlined btn-primary" type="submit" value="Sende melding" />
+                        <input type="text" name="name" id="name" placeholder="Navn" value="{{ old('name') }}" />
+                        <div class="text-danger">{{ $errors->first('name') }}</div>
+
+
+                        <input type="text" name="email" id="email" placeholder="Email" value="{{ old('email') }}" />
+                        <div class="text-danger">{{ $errors->first('email') }}</div>
+
+
+                        <textarea name="comments" id="comments" placeholder="Din beskjed">{{ old('comments') }}</textarea>
+                        <div class="text-danger">{{ $errors->first('comments') }}</div>
+
+                        <div class="clearfix"></div>
+
+                        <input class="btn btn-outlined btn-primary mt-3" type="submit" value="Sende melding" />
 
                     </form>
                 </div><!-- col -->
