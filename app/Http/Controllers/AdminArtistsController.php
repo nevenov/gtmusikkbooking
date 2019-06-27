@@ -257,6 +257,16 @@ class AdminArtistsController extends Controller
             $photo->delete();
         }
 
+
+        if($artist->audio){
+            unlink(public_path() . $artist->audio->file);
+
+            $photo = Audio::findOrFail($artist->audio_id);
+
+            $photo->delete();
+        }
+
+
         $artist->delete();
 
         return redirect('/admin/artists')->with('status', 'Артистът е изтрит успешно. ');
