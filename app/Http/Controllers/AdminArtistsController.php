@@ -18,7 +18,7 @@ class AdminArtistsController extends Controller
     public function index()
     {
         //
-        $artists = Artist::orderBy('title', 'asc')->paginate(50);
+        $artists = Artist::orderBy('updated_at', 'desc')->paginate(50);
 
 
         return view('admin.artists.index', compact('artists'));
@@ -57,19 +57,30 @@ class AdminArtistsController extends Controller
     public function store(Request $request)
     {
         //
+
+        $request->validate([
+            'photo_id' => 'mimes:jpeg,png,jpg,gif',
+            'audio_id' => 'mimes:mpga,wav',
+
+        ]);
+
+        $picture = "";
+
         $input = $request->all();
 
+
         // upload artist photo
-        if($file = $request->file('photo_id')){
+        if ($file = $request->file('photo_id')) {
 
             $name = time() . $file->getClientOriginalName();
 
             $file->move('images', $name);
 
-            $photo = Photo::create(['file'=>$name]);
+            $photo = Photo::create(['file' => $name]);
 
             $input['photo_id'] = $photo->id;
         }
+
 
         // upload artist demo mp3
         if($file = $request->file('audio_id')){
@@ -85,7 +96,7 @@ class AdminArtistsController extends Controller
 
         Artist::create($input);
 
-        return redirect('/admin/artists')->with('status', 'Артистът е създаден успешно.');
+        return redirect('/admin/artists')->with('status', 'Артистът е създаден успешно.'.$picture);
 
         //dd($input);
     }
@@ -129,6 +140,12 @@ class AdminArtistsController extends Controller
     {
         //
         $artist = Artist::findOrFail($id);
+
+        $request->validate([
+            'photo_id' => 'mimes:jpeg,png,jpg,gif',
+            'audio_id' => 'mimes:mpga,wav',
+
+        ]);
 
         $input = $request->all();
 
