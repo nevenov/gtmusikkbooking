@@ -178,7 +178,7 @@ class AdminArtistsController extends Controller
 
             if($artist->photo) {
 
-                unlink(public_path() . $artist->photo->file);
+                unlink(config('app.app_path_public') . $artist->photo->file);
 
                 $artist->photo->update(['file'=>$name]);
 
@@ -216,7 +216,7 @@ class AdminArtistsController extends Controller
 
             if($artist->audio) {
 
-                unlink(public_path() . $artist->audio->file);
+                unlink(config('app.app_path_public') . $artist->audio->file);
 
                 $artist->audio->update(['file'=>$name]);
 
@@ -252,7 +252,7 @@ class AdminArtistsController extends Controller
         $artist = Artist::findOrFail($id);
 
         if($artist->photo){
-            unlink(public_path() . $artist->photo->file);
+            unlink(config('app.app_path_public') . $artist->photo->file);
 
             $photo = Photo::findOrFail($artist->photo_id);
 
@@ -261,7 +261,7 @@ class AdminArtistsController extends Controller
 
 
         if($artist->audio){
-            unlink(public_path() . $artist->audio->file);
+            unlink(config('app.app_path_public') . $artist->audio->file);
 
             $photo = Audio::findOrFail($artist->audio_id);
 

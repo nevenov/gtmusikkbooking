@@ -21,7 +21,7 @@ class AdminPhotosController extends Controller
         $artist = Artist::findOrFail($id);
 
         if($artist->photo){
-            unlink(public_path() . $artist->photo->file);
+            unlink(config('app.app_path_public') . $artist->photo->file);
         }
 
         $artist->photo->delete();
@@ -36,7 +36,7 @@ class AdminPhotosController extends Controller
         $category = Category::findOrFail($id);
 
         if($category->photo){
-            unlink(public_path() . $category->photo->file);
+            unlink(config('app.app_path_public') . $category->photo->file);
         }
 
         $category->photo->delete();

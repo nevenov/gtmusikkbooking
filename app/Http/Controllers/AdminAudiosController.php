@@ -20,7 +20,7 @@ class AdminAudiosController extends Controller
         $artist = Artist::findOrFail($id);
 
         if($artist->audio){
-            unlink(public_path() . $artist->audio->file);
+            unlink(config('app.app_path_public') . $artist->audio->file);
         }
 
         $artist->audio->delete();
