@@ -192,7 +192,7 @@ class AdminArtistsController extends Controller
 
             }
 
-            $resizeimage = Image::make(config('app.app_path_public') . $artist->photo->file)->widen(1200, function ($constraint) {
+            $resizeimage = Image::make(config('app.app_path_public').'/images/'.$name)->widen(1200, function ($constraint) {
                 $constraint->upsize();
             })->text('G.T.MUSIKKBOOKING', 20, 20, function($font) {
                 $font->file(config('app.app_path_public').'/front/fonts/Lato-Regular.ttf');
