@@ -81,10 +81,12 @@ class AdminArtistsController extends Controller
 
             $input['photo_id'] = $photo->id;
 
-            $resizeimage = Image::make(public_path('images/'.$name))->widen(1200, function ($constraint) {
+//            return config('app.app_path_public', 'G.T.MUSIKKBOOKING DASHBOARD').'/images/'.$name; die;
+
+            $resizeimage = Image::make(config('app.app_path_public').'/images/'.$name)->widen(1200, function ($constraint) {
                 $constraint->upsize();
             })->text('G.T.MUSIKKBOOKING', 20, 20, function($font) {
-                $font->file(public_path('front/fonts/Lato-Regular.ttf'));
+                $font->file(config('app.app_path_public').'/front/fonts/Lato-Regular.ttf');
                 $font->size(24);
                 $font->color('#fdf6e3');
                 $font->align('left');
@@ -190,10 +192,10 @@ class AdminArtistsController extends Controller
 
             }
 
-            $resizeimage = Image::make(public_path() . $artist->photo->file)->widen(1200, function ($constraint) {
+            $resizeimage = Image::make(config('app.app_path_public') . $artist->photo->file)->widen(1200, function ($constraint) {
                 $constraint->upsize();
             })->text('G.T.MUSIKKBOOKING', 20, 20, function($font) {
-                $font->file(public_path('front/fonts/Lato-Regular.ttf'));
+                $font->file(config('app.app_path_public').'/front/fonts/Lato-Regular.ttf');
                 $font->size(24);
                 $font->color('#fdf6e3');
                 $font->align('left');
