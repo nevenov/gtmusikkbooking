@@ -208,9 +208,9 @@
 </div>
 
 
-<script src="{{ asset('front') }}/js/plugins.js"></script>
-<script src="{{ asset('front') }}/js/bootstrap.min.js"></script>
-<script src="{{ asset('front') }}/js/jquery.prettyPhoto.js"></script>
-<script src="{{ asset('front') }}/js/init.js"></script>
+<script src="{{ asset('front') }}/js/plugins.js" defer></script>
+<script src="{{ asset('front') }}/js/bootstrap.min.js" defer></script>
+<script src="{{ asset('front') }}/js/jquery.prettyPhoto.js" defer></script>
+<script src="{{ asset('front') }}/js/init.js" defer></script>
 </body>
 </html>
