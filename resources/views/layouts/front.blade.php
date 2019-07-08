@@ -7,10 +7,12 @@
     <meta name="author" content="Stoyan Nedev">
     <title>G.T.MUSIKKBOOKING - ARTISTER AGENTUR</title>
     <link href="{{ asset('front') }}/css/bootstrap.min.css" rel="stylesheet">
-    <link href="{{ asset('front') }}/css/font-awesome.min.css" rel="stylesheet">
-    <link href="{{ asset('front') }}/css/pe-icons.css" rel="stylesheet">
-    <link href="{{ asset('front') }}/css/prettyPhoto.css" rel="stylesheet">
-    <link href="{{ asset('front') }}/css/animate.css" rel="stylesheet">
+    <noscript>
+        <link href="{{ asset('front') }}/css/font-awesome.min.css" rel="stylesheet">
+        <link href="{{ asset('front') }}/css/pe-icons.css" rel="stylesheet">
+        <link href="{{ asset('front') }}/css/prettyPhoto.css" rel="stylesheet">
+        <link href="{{ asset('front') }}/css/animate.css" rel="stylesheet">
+    </noscript>
     <link href="{{ asset('front') }}/css/style.css" rel="stylesheet">
     <script src="{{ asset('front') }}/js/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
@@ -207,6 +209,41 @@
     </footer><!--/#footer-->
 </div>
 
+
+<script type="text/javascript">
+    /* font-awesome CSS File */
+    var giftofspeed3 = document.createElement('link');
+    giftofspeed3.rel = 'stylesheet';
+    giftofspeed3.href = '{{ asset("front") }}/css/font-awesome.min.css';
+    giftofspeed3.type = 'text/css';
+    var godefer3 = document.getElementsByTagName('link')[0];
+    godefer3.parentNode.insertBefore(giftofspeed3, godefer3);
+
+    /* Pretty Photo CSS File */
+    var giftofspeed = document.createElement('link');
+    giftofspeed.rel = 'stylesheet';
+    giftofspeed.href = '{{ asset("front") }}/css/prettyPhoto.css';
+    giftofspeed.type = 'text/css';
+    var godefer = document.getElementsByTagName('link')[0];
+    godefer.parentNode.insertBefore(giftofspeed, godefer);
+
+
+    /* pe-icons CSS File */
+    var giftofspeed2 = document.createElement('link');
+    giftofspeed2.rel = 'stylesheet';
+    giftofspeed2.href = '{{ asset("front") }}/css/pe-icons.css';
+    giftofspeed2.type = 'text/css';
+    var godefer2 = document.getElementsByTagName('link')[0];
+    godefer2.parentNode.insertBefore(giftofspeed2, godefer2);
+
+    /* animate CSS File */
+    var giftofspeed4 = document.createElement('link');
+    giftofspeed4.rel = 'stylesheet';
+    giftofspeed4.href = '{{ asset("front") }}/css/animate.css';
+    giftofspeed4.type = 'text/css';
+    var godefer4 = document.getElementsByTagName('link')[0];
+    godefer4.parentNode.insertBefore(giftofspeed4, godefer4);
+</script>
 
 <script src="{{ asset('front') }}/js/plugins.js" defer></script>
 <script src="{{ asset('front') }}/js/bootstrap.min.js" defer></script>
