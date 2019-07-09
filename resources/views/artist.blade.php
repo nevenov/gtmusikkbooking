@@ -75,7 +75,7 @@
                                 {{--<p class="lead"></p>--}}
 
                                 @if($artist->body)
-                                    <p>{{ $artist->body }}</p>
+                                    <p>{!! $artist->body !!}</p>
                                     <hr>
                                 @endif
 
