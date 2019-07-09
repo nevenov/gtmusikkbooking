@@ -16,7 +16,7 @@ class FrontCategoriesController extends Controller
     public function index()
     {
         //
-        $categories = Category::where('parent_id', 0)->orderBy('updated_at', 'desc')->get();
+        $categories = Category::where('parent_id', 0)->orderBy('created_at', 'asc')->get();
         return view('index', compact('categories'));
     }
 
@@ -47,10 +47,10 @@ class FrontCategoriesController extends Controller
             }
 //            $artists = $category->artists()->whereIn('category_id', $cat_ids)->where('status', 'active')->get();
             $subCategories = Category::whereIn('id', $subCatArr)->get();
-            $artists = Artist::whereIn('category_id', $cat_ids)->where('status', 'active')->get();
+            $artists = Artist::whereIn('category_id', $cat_ids)->where('status', 'active')->orderBy('updated_at', 'desc')->get();
 
         } else {
-            $artists = $category->artists()->where('status', 'active')->get();
+            $artists = $category->artists()->where('status', 'active')->orderBy('updated_at', 'desc')->get();
         }
 
 //        dd($subCategories); die;
