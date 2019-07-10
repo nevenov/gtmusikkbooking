@@ -73,21 +73,21 @@
                                 </div>
 
 
-                                <div class="form-row">
+                                <div class="form-row pb-4">
                                     <div class="form-group col-lg-6">
                                         <label class="form-control-label" for="input-title">{{ __('Име') }}</label>
                                         <input type="text" name="title" id="input-title" class="form-control" value="{{ $artist->title }}" placeholder="{{ __('Име на артиста') }}" required autofocus>
                                     </div>
 
-                                    <div class="form-group col-md-3">
-                                        <label class="form-control-label" for="input-initials">{{ __('Инициали') }}</label>
-                                        <input type="text" name="initials" id="input-initials" class="form-control" value="{{ $artist->initials }}" placeholder="{{ __('Инициали') }}" value="{{ old('initials') }}">
-                                    </div>
+                                    {{--<div class="form-group col-md-3">--}}
+                                        {{--<label class="form-control-label" for="input-initials">{{ __('Инициали') }}</label>--}}
+                                        {{--<input type="text" name="initials" id="input-initials" class="form-control" value="{{ $artist->initials }}" placeholder="{{ __('Инициали') }}" value="{{ old('initials') }}">--}}
+                                    {{--</div>--}}
 
-                                    <div class="form-group col-md-2">
-                                        <label class="form-control-label" for="input-pass">{{ __('Код') }}</label>
-                                        <input type="text" name="pass" id="input-pass" class="form-control" value="{{ $artist->pass }}" placeholder="{{ __('Код') }}" value="{{ old('pass') }}">
-                                    </div>
+                                    {{--<div class="form-group col-md-2">--}}
+                                        {{--<label class="form-control-label" for="input-pass">{{ __('Код') }}</label>--}}
+                                        {{--<input type="text" name="pass" id="input-pass" class="form-control" value="{{ $artist->pass }}" placeholder="{{ __('Код') }}" value="{{ old('pass') }}">--}}
+                                    {{--</div>--}}
                                 </div>
 
 
@@ -111,14 +111,14 @@
 
 
 
-                                <div class="form-group pt-4">
+                                <div class="form-group pt-5 pb-4">
                                     <label for="body">Описание:</label>
                                     <textarea name="body" class="form-control" rows="25" id="body" placeholder="Описание на артиста ...">{{ $artist->body }}</textarea>
                                 </div>
 
 
 
-                                <div class="form-row">
+                                <div class="form-row pb-4">
                                     <div class="form-group col-lg-8">
                                         <label class="form-control-label" for="input-video1">{{ __('Youtube demo') }}</label>
                                         <input type="text" name="video1" id="input-reference1" class="form-control" placeholder="{{ __('Напр.: https://www.youtube.com/watch?v=zVOuRQPPdoo') }}" value="{{ $artist->video1 }}">
