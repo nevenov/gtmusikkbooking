@@ -27,7 +27,7 @@ Route::get('/gruppe/{id}', 'FrontCategoriesController@show')->name('gruppe.name'
 Route::get('artist/{id}', ['as'=>'artist.show', 'uses'=>'FrontArtistsController@show']);
 
 
-Route::post('/contact', 'ContactFormController@store');
+Route::post('contact', 'ContactFormController@store');
 
 
 Auth::routes(['verify' => true, 'register' => false]);

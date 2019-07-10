@@ -3,6 +3,7 @@
 
 {{ $data['comments'] }}
 
+<br>
 
 <strong>Name:</strong> {{ $data['name'] }}
 
