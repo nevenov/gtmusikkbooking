@@ -21,7 +21,7 @@ class ContactFormController extends Controller
         ]);
 
         //Sending Email
-        Mail::to('stoiannedev@gmail.com')->send(new ContactFormMail($data));
+        Mail::to('office@gtmusikkbooking.com')->send(new ContactFormMail($data));
 
         return redirect()->back()->with('message', 'Takk for at du kontaktet oss. Vi vil svare så snart som mulig.');
     }
