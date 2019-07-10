@@ -88,12 +88,13 @@
 
 
                                 @if($artist->reference1)
-                                    <p>{{ $artist->reference1 }}</p>
+                                    <p>{!! nl2br($artist->reference1) !!}</p>
                                     <hr>
                                 @endif
 
                                 @if($artist->reference2)
-                                    <p>{{ $artist->reference2 }}</p>
+                                    <p>{!! nl2br($artist->reference2) !!}</p>
+                                    <hr>
                                 @endif
 
                             </div>

@@ -75,12 +75,12 @@
 
                                     <div class="form-group col-md-2">
                                         <label class="form-control-label" for="input-initials">{{ __('Инициали') }}</label>
-                                        <input type="text" name="initials" id="input-initials" class="form-control" placeholder="{{ __('Инициали') }}" value="{{ old('initials') }}" required>
+                                        <input type="text" name="initials" id="input-initials" class="form-control" placeholder="{{ __('Инициали') }}" value="{{ old('initials') }}">
                                     </div>
 
                                     <div class="form-group col-md-2">
                                         <label class="form-control-label" for="input-pass">{{ __('Код') }}</label>
-                                        <input type="text" name="pass" id="input-pass" class="form-control" placeholder="{{ __('Код') }}" value="{{ old('pass') }}" required>
+                                        <input type="text" name="pass" id="input-pass" class="form-control" placeholder="{{ __('Код') }}" value="{{ old('pass') }}">
                                     </div>
                                 </div>
 
@@ -112,15 +112,18 @@
                                 </div>
 
 
-                                <div class="form-row pt-4">
-                                    <div class="form-group col-md-5">
+                                <div class="form-row pt-5">
+                                    <div class="form-group col-lg-10">
                                         <label class="form-control-label" for="input-reference1">{{ __('Референции') }}</label>
-                                        <input type="text" name="reference1" id="input-reference1" class="form-control" placeholder="{{ __('Референция 1') }}" value="{{ old('reference1') }}">
+                                        <textarea name="reference1" class="form-control" rows="3" id="input-reference1" placeholder="Референция 1 текст ...">{{ old('reference1') }}</textarea>
                                     </div>
+                                </div>
 
-                                    <div class="form-group col-md-5 offset-1">
-                                        <label class="form-control-label" for="input-reference2"> &nbsp;&nbsp;&nbsp;&nbsp;</label>
-                                        <input type="text" name="reference2" id="input-reference2" class="form-control" placeholder="{{ __('Референция 2') }}" value="{{ old('reference2') }}">
+
+                                <div class="form-row">
+                                    <div class="form-group col-lg-10">
+                                        <label class="form-control-label" for="input-reference2"> </label>
+                                        <textarea name="reference2" class="form-control" rows="3" id="input-reference2" placeholder="Референция 2 текст ...">{{ old('reference2') }}</textarea>
                                     </div>
                                 </div>
 

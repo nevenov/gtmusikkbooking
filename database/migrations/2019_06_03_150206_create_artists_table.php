@@ -30,9 +30,9 @@ class CreateArtistsTable extends Migration
             $table->string('video1')->nullable();
             $table->string('video2')->nullable();
             $table->string('video3')->nullable();
-            $table->string('reference1')->nullable();
-            $table->string('reference2')->nullable();
-            $table->string('reference3')->nullable();
+            $table->text('reference1')->nullable();
+            $table->text('reference2')->nullable();
+            $table->text('reference3')->nullable();
             $table->timestamps();
         });
     }
