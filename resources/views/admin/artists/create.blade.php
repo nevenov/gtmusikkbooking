@@ -73,7 +73,7 @@
                                         <input type="text" name="title" id="input-title" class="form-control" placeholder="{{ __('Име на артиста') }}" value="{{ old('title') }}" required autofocus>
                                     </div>
 
-                                    <div class="form-group col-md-2">
+                                    <div class="form-group col-md-3">
                                         <label class="form-control-label" for="input-initials">{{ __('Инициали') }}</label>
                                         <input type="text" name="initials" id="input-initials" class="form-control" placeholder="{{ __('Инициали') }}" value="{{ old('initials') }}">
                                     </div>
