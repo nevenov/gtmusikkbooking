@@ -1,6 +1,10 @@
 @extends('layouts.front')
 
 
+@section('metatitle', $category->name )
+
+@section('metadescription', $category->name.' - Lytt til en artist, lytt til hans demonstrasjon og ring oss')
+
 
 @section('content')
 

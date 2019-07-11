@@ -1,6 +1,8 @@
 @extends('layouts.front')
 
+@section('metatitle', 'G.T.MUSIKKBOOKING - ARTISTER AGENTUR' )
 
+@section('metadescription', 'GT Musikk Booking består av to musikere med bred erfaring fra bransjen. Vi kan bidra med gode løsninger for både musikere og arrangører til alle typer arrangementer')
 
 @section('content')
 

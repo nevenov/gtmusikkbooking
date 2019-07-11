@@ -1,6 +1,8 @@
 @extends('layouts.front')
 
+@section('metatitle', $artist->title )
 
+@section('metadescription', Str::limit(strip_tags($artist->body), 160, "") )
 
 @section('content')
 

@@ -3,9 +3,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
     <meta name="author" content="Stoyan Nedev">
-    <title>G.T.MUSIKKBOOKING - ARTISTER AGENTUR</title>
+
+    <title>@yield('metatitle', 'G.T.MUSIKKBOOKING - ARTISTER AGENTUR')</title>
+
+    <meta name="description" content="@yield('metadescription', 'GT Musikk Booking består av to musikere med bred erfaring fra bransjen. Vi kan bidra med gode løsninger for både musikere og arrangører til alle typer arrangementer')">
+
     <link href="{{ asset('front') }}/css/bootstrap.min.css" rel="stylesheet">
     <noscript>
         <link href="{{ asset('front') }}/css/font-awesome.min.css" rel="stylesheet">
