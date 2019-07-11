@@ -2,7 +2,7 @@
 
 @section('metatitle', $artist->title )
 
-@section('metadescription', Str::limit(strip_tags($artist->body), 160, "") )
+@section('metadescription', Str::limit(html_entity_decode(strip_tags($artist->body), 160, "")) )
 
 @section('content')
 
