@@ -2292,6 +2292,14 @@ img.author-box-image {
     letter-spacing: 6px;
 }
 
+@media all and (max-width: 768px) {
+    .main-title {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 22px;
+    }
+}
+
 .section-heading p {
   text-transform: uppercase;
 }
