@@ -334,6 +334,11 @@ blockquote {
     padding-left: 20px;
 }
 
+.see-more-artist {
+    float:right;
+    letter-spacing:1px;
+}
+
 .portfolio-items.col-4 > li {
     width: 25%;
 }

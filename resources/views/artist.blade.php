@@ -34,10 +34,20 @@
                     <div class="blog">
                         <div class="blog-item">
                             <div class="blog-featured-image">
-                                <img class="img-responsive img-blog" src="{{$artist->photo ? $artist->photo->file : $artist->frontArtistPlaceholder()}}" alt="" />
-                                <div class="overlay">
-                                    <a class="preview btn btn-outlined btn-primary" href="{{$artist->photo ? $artist->photo->file : $artist->frontArtistPlaceholder()}}" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
-                                </div>
+
+
+                                @if($artist->video1)
+                                    <div class="blog-content" style="border-bottom: none;">
+                                    <div class="iframe-container">
+                                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/{{ $artist->youtubeEmbed($artist->video1) }}?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    </div>
+                                    </div>
+                                @else
+                                    <img class="img-responsive img-blog" src="{{$artist->photo ? $artist->photo->file : $artist->frontArtistPlaceholder()}}" alt="" />
+                                    <div class="overlay">
+                                        <a class="preview btn btn-outlined btn-primary" href="{{$artist->photo ? $artist->photo->file : $artist->frontArtistPlaceholder()}}" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                                    </div>
+                                @endif
                             </div>
                             <div class="blog-content pt-3">
                                 {{--<h3 class="main-title">{{ $artist->initials ? $artist->initials : $artist->title }}</h3>--}}
@@ -78,13 +88,6 @@
 
                                 @if($artist->body)
                                     <p>{!! $artist->body !!}</p>
-                                    <hr>
-                                @endif
-
-                                @if($artist->video1)
-                                    <div class="iframe-container">
-                                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/{{ $artist->youtubeEmbed($artist->video1) }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    </div>
                                     <hr>
                                 @endif
 

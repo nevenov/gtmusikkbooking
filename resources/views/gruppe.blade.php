@@ -50,7 +50,13 @@
                         <div class="overlay">
                             <a class="preview btn btn-outlined btn-primary" href="{{ route('artist.show', $artist->id) }}"><i class="fa fa-link"></i></a>
                         </div>
-                        <h5><a href="{{ route('artist.show', $artist->id) }}">{{ $artist->title ? $artist->title : $artist->initials }}</a></h5>
+
+                        <h5>
+                            <a href="{{ route('artist.show', $artist->id) }}">{{ $artist->title ? $artist->title : $artist->initials }}</a>
+
+                            <a class="see-more-artist" href="{{ route('artist.show', $artist->id) }}">mer <i class="fa fa-caret-right" aria-hidden="true"></i></a>
+                        </h5>
+
 
                         @if($artist->audio)
                             <div class="row row-audio">
