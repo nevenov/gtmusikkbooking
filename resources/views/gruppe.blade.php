@@ -58,12 +58,12 @@
                         </h5>
 
 
-                        @if($artist->audio)
+                        @if(isset($artist->audio_id) && $artist->audio_id!='/audio/')
                             <div class="row row-audio">
                             <div class="col-md-3 audio-div audio-div-demo">DEMO:</div>
                             <div class="col-md-9 audio-div">
                                 <audio controls class="audio-player">
-                                    <source src="{{ $artist->audio->file }}" type="audio/mpeg">
+                                    <source src="{{ $artist->audio_id }}" type="audio/mpeg">
                                     Your browser does not support the audio element.
                                 </audio>
                             </div>

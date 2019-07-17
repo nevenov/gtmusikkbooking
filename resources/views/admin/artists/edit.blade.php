@@ -129,12 +129,12 @@
                                 <div class="custom-file col-lg-8">
                                     <input type="file" name="audio_id" class="custom-file-input" id="customFile1">
                                     <label class="custom-file-label" for="customFile1">Избери mp3 файл за демо</label>
-                                    @if($artist->audio)
+                                    @if(isset($artist->audio_id) && $artist->audio_id!='/audio/')
                                     <div class="row">
                                         <div class="col-lg-5 pl-0 pt-2">
 
                                             <audio controls>
-                                                <source src="{{ $artist->audio->file }}" type="audio/mpeg">
+                                                <source src="{{ $artist->audio_id }}" type="audio/mpeg">
                                                 Your browser does not support the audio element.
                                             </audio>
 
@@ -142,13 +142,41 @@
 
                                         <div class="col-lg-7 pr-0 pt-3 text-right">
 
-                                            @if($artist->audio)
+                                            @if($artist->audio_id)
                                                 <a href="{{ route('admin.audios.delete', $artist->id) }}" class="btn btn-danger btn-sm" onclick="return confirm('Сигурен ли сте, че искате да изтриете демото на този артист?')">Изтрий демо</a>
                                             @endif
 
                                         </div>
 
                                     </div>
+                                    @endif
+
+                                </div>
+
+
+                                <div class="custom-file col-lg-8 mt-5">
+                                    <input type="file" name="audio2" class="custom-file-input" id="customFile2">
+                                    <label class="custom-file-label" for="customFile2">Избери втори mp3 файл за демо</label>
+                                    @if(isset($artist->audio2) && $artist->audio2!='/audio/')
+                                        <div class="row">
+                                            <div class="col-lg-5 pl-0 pt-2">
+
+                                                <audio controls>
+                                                    <source src="{{ $artist->audio2 }}" type="audio/mpeg">
+                                                    Your browser does not support the audio element.
+                                                </audio>
+
+                                            </div>
+
+                                            <div class="col-lg-7 pr-0 pt-3 text-right">
+
+                                                @if($artist->audio2)
+                                                    <a href="{{ route('admin.audios.deletesec', $artist->id) }}" class="btn btn-danger btn-sm" onclick="return confirm('Сигурен ли сте, че искате да изтриете демо 2 на този артист?')">Изтрий демо 2</a>
+                                                @endif
+
+                                            </div>
+
+                                        </div>
                                     @endif
 
                                 </div>

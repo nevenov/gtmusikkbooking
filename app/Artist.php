@@ -12,6 +12,9 @@ class Artist extends Model
     use Sluggable;
     use SluggableScopeHelpers;
 
+
+    protected $uploadAudio = '/audio/';
+
     protected $fillable = [
         'user_id',
         'category_id',
@@ -66,6 +69,24 @@ class Artist extends Model
     public function audio(){
 
         return $this->belongsTo('App\Audio');
+
+    }
+
+    public function audio2(){
+
+        return $this->belongsTo('App\Audio');
+
+    }
+
+    public function getAudioIdAttribute($audio){
+
+        return $this->uploadAudio . $audio;
+
+    }
+
+    public function getAudio2Attribute($audio2){
+
+        return $this->uploadAudio . $audio2;
 
     }
 

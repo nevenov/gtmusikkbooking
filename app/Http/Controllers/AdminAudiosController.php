@@ -19,12 +19,30 @@ class AdminAudiosController extends Controller
         //
         $artist = Artist::findOrFail($id);
 
-        if($artist->audio){
-            unlink(config('app.app_path_public') . $artist->audio->file);
+        if(isset($artist->audio_id) && $artist->audio_id!='/audio/'){
+            unlink(config('app.app_path_public') . $artist->audio_id);
         }
 
-        $artist->audio->delete();
+        $artist->audio_id = NULL;
 
-        return back()->with('status', 'Демото на артиста е изтрита успешно. ');
+        $artist->save();
+
+        return back()->with('status', 'Демото на артиста е изтрито успешно. ');
+    }
+
+    public function destroysec($id)
+    {
+        //
+        $artist = Artist::findOrFail($id);
+
+        if(isset($artist->audio2) && $artist->audio2!='/audio/'){
+            unlink(config('app.app_path_public') . $artist->audio2);
+        }
+
+        $artist->audio2 = NULL;
+
+        $artist->save();
+
+        return back()->with('status', 'Демо 2 на артиста е изтрито успешно. ');
     }
 }

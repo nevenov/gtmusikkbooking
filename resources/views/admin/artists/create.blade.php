@@ -112,6 +112,12 @@
                                 </div>
 
 
+                                <div class="custom-file col-md-8 mt-5">
+                                    <input type="file" name="audio2" class="custom-file-input" id="customFile2">
+                                    <label class="custom-file-label" for="customFile2">Избери втори mp3 файл за демо</label>
+                                </div>
+
+
                                 <div class="form-row pt-5">
                                     <div class="form-group col-lg-10">
                                         <label class="form-control-label" for="input-reference1">{{ __('Референции') }}</label>

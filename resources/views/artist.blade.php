@@ -57,13 +57,13 @@
                                     <div class="col-md-6">
                                         <h3 class="main-title">{{ $artist->title ? $artist->title : "Please, enter artist name" }}</h3>
                                     </div>
-                                    @if($artist->audio)
+                                    @if(isset($artist->audio_id) && $artist->audio_id!='/audio/')
                                         <div class="col-md-6">
                                             <div class="row">
                                                 <div class="col-md-2 audio-div audio-div-demo">DEMO:</div>
                                                 <div class="col-md-10 audio-div">
                                                     <audio controls class="audio-player">
-                                                        <source src="{{ $artist->audio->file }}" type="audio/mpeg">
+                                                        <source src="{{ $artist->audio_id }}" type="audio/mpeg">
                                                         Your browser does not support the audio element.
                                                     </audio>
                                                 </div>
@@ -71,6 +71,23 @@
                                         </div>
                                     @endif
                                 </div>
+
+                                @if(isset($artist->audio2) && $artist->audio2!='/audio/')
+                                <div class="row">
+
+                                    <div class="col-md-6 col-md-offset-6">
+                                        <div class="row">
+                                            <div class="col-md-2 audio-div audio-div-demo">DEMO2:</div>
+                                            <div class="col-md-10 audio-div">
+                                                <audio controls class="audio-player">
+                                                    <source src="{{ $artist->audio2 }}" type="audio/mpeg">
+                                                    Your browser does not support the audio element.
+                                                </audio>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                @endif
 
 
                                 <div class="entry-meta">

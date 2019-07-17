@@ -100,11 +100,14 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('admin/photos/categories/{id}/delete', ['uses' => 'AdminPhotosController@destroycategory', 'as' => 'admin.photos.categories.delete']);
 
 
-    // route for admin/audios use AdminPhotosController
-    Route::resource('admin/audios', 'AdminAudiosController');
+    // route for admin/audios use AdminAudiosController
+    //Route::resource('admin/audios', 'AdminAudiosController');
 
-    // this route is used to delete photo in Category -> Edit view
+    // this route is used to delete mp3 demo in Artist -> Edit view
     Route::get('admin/audios/{id}/delete', ['uses' => 'AdminAudiosController@destroy', 'as' => 'admin.audios.delete']);
+
+    // this route is used to delete second mp3 demo in Artist -> Edit view
+    Route::get('admin/audios/{id}/deletesec', ['uses' => 'AdminAudiosController@destroysec', 'as' => 'admin.audios.deletesec']);
 
 
 }); // end auth middleware

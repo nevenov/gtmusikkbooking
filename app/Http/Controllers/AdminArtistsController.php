@@ -62,6 +62,7 @@ class AdminArtistsController extends Controller
         $request->validate([
             'photo_id' => 'mimes:jpeg,png,jpg,gif',
             'audio_id' => 'mimes:mpga,wav',
+            'audio2' => 'mimes:mpga,wav',
 
         ]);
 
@@ -104,9 +105,25 @@ class AdminArtistsController extends Controller
 
             $file->move('audio', $name);
 
-            $audio = Audio::create(['file'=>$name]);
+            //$audio = Audio::create(['file'=>$name]);
 
-            $input['audio_id'] = $audio->id;
+            //$input['audio_id'] = $audio->id;
+
+            $input['audio_id'] = $name;
+        }
+
+        // upload artist demo mp3 second file
+        if($file2 = $request->file('audio2')){
+
+            $name2 = (time() + 60*60) . $file2->getClientOriginalName();
+
+            $file2->move('audio', $name2);
+
+            //$audio2 = Audio::create(['file'=>$name2]);
+
+            //$input['audio2'] = $audio2->id;
+
+            $input['audio2'] = $name2;
         }
 
         Artist::create($input);
@@ -159,6 +176,7 @@ class AdminArtistsController extends Controller
         $request->validate([
             'photo_id' => 'mimes:jpeg,png,jpg,gif',
             'audio_id' => 'mimes:mpga,wav',
+            'audio2' => 'mimes:mpga,wav',
 
         ]);
 
@@ -214,21 +232,39 @@ class AdminArtistsController extends Controller
             $file->move('audio', $name);
 
 
-            if($artist->audio) {
+            if(isset($artist->audio_id) && $artist->audio_id!='/audio/') {
 
-                unlink(config('app.app_path_public') . $artist->audio->file);
+                unlink(config('app.app_path_public') . $artist->audio_id);
 
-                $artist->audio->update(['file'=>$name]);
+                //$artist->audio->update(['file'=>$name]);
 
-                $input['audio_id'] = $artist->audio->id;
-
-            } else {
-
-                $audio = Audio::create(['file'=>$name]);
-
-                $input['audio_id'] = $audio->id;
+                //$input['audio_id'] = $artist->audio->id;
 
             }
+
+            $input['audio_id'] = $name;
+        }
+
+
+        // upload artist demo mp3 second file
+        if($file2 = $request->file('audio2')){
+
+            $name2 = time() . $file2->getClientOriginalName();
+
+            $file2->move('audio', $name2);
+
+
+            if(isset($artist->audio2) && $artist->audio2!='/audio/') {
+
+                unlink(config('app.app_path_public') . $artist->audio2);
+
+//                $artist->audio2->update(['file'=>$name2]);
+//
+//                $input['audio2'] = $artist->audio2->id;
+
+            }
+
+            $input['audio2'] = $name2;
         }
 
 
@@ -260,12 +296,12 @@ class AdminArtistsController extends Controller
         }
 
 
-        if($artist->audio){
-            unlink(config('app.app_path_public') . $artist->audio->file);
+        if(isset($artist->audio_id) && $artist->audio_id!='/audio/'){
+            unlink(config('app.app_path_public') . $artist->audio_id);
+        }
 
-            $photo = Audio::findOrFail($artist->audio_id);
-
-            $photo->delete();
+        if(isset($artist->audio2) && $artist->audio2!='/audio/'){
+            unlink(config('app.app_path_public') . $artist->audio2);
         }
 
 
