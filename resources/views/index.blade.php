@@ -39,39 +39,38 @@
                         Vi kan være behjelpelig med å skaffe artister/orkester - lokalt, nasjonalt og internasjonalt.
                     </p>
 
-                    <p>
-                        Vi leverer alt innen:
+                    <div class="row under-about-us">
+                        <div class="col-md-12">Vi leverer alt innen:</div>
 
-                            <div class="col-md-4">
-                                <ul class="about-us-list">
-                                    <li>Bryllup</li>
-                                    <li>Dansearrangementer</li>
-                                    <li>Hotell og Restaurantmusikere</li>
-                                    <li>Pianobarentertainere</li>
-                                    <li>Taffelmusikere</li>
-                                </ul>
-                            </div>
-                            <div class="col-md-4">
-                                <ul class="about-us-list">
-                                    <li>Pubmusikere</li>
-                                    <li>Countrymusikere</li>
-                                    <li>Pop-Rock musikere</li>
-                                    <li>Jazzmusikere</li>
-                                    <li>Klassisk Musik</li>
-                                </ul>
-                            </div>
-                            <div class="col-md-4">
-                                <ul class="about-us-list">
-                                    <li>DJ / Karaoke</li>
-                                    <li>Barneunderholdning</li>
-                                    <li>Event Lyd og Lys</li>
-                                    <li>Utleie Lyd og Lysutstyr</li>
-                                    <li>Alle typer artister m.m</li>
-                                </ul>
-                            </div>
+                        <div class="col-md-4">
+                            <ul class="about-us-list">
+                                <li>Bryllup</li>
+                                <li>Dansearrangementer</li>
+                                <li>Hotell og Restaurantmusikere</li>
+                                <li>Pianobarentertainere</li>
+                                <li>Taffelmusikere</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <ul class="about-us-list">
+                                <li>Pubmusikere</li>
+                                <li>Countrymusikere</li>
+                                <li>Pop-Rock musikere</li>
+                                <li>Jazzmusikere</li>
+                                <li>Klassisk Musik</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <ul class="about-us-list">
+                                <li>DJ / Karaoke</li>
+                                <li>Barneunderholdning</li>
+                                <li>Event Lyd og Lys</li>
+                                <li>Utleie Lyd og Lysutstyr</li>
+                                <li>Alle typer artister m.m</li>
+                            </ul>
+                        </div>
+                    </div>
 
-
-                    </p>
                 </div>
                 <div class="col-md-4 fade-up">
 

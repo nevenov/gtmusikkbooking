@@ -2408,6 +2408,12 @@ img.author-box-image {
 }
 
 
+div.under-about-us {
+    background-color: #f0f0f0;
+    padding: 14px;
+    color:#000;
+}
+
 ul.about-us-list {
     margin-bottom: 0;
 }
