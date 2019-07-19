@@ -47,7 +47,7 @@
                             <thead class="thead-light">
                             <tr>
                                 <th scope="col">{{ __('Снимка') }}</th>
-                                <th scope="col">{{ __('Инициали/Име') }}</th>
+                                <th scope="col">{{ __('Име') }}</th>
                                 <th scope="col">{{ __('Група') }}</th>
                                 <th scope="col">{{ __('Статус') }}</th>
                                 <th scope="col">{{ __('Добавен на') }}</th>
@@ -59,13 +59,10 @@
                             @foreach ($artists as $artist)
                                 <tr>
                                     <td class="pr-0"><img height="50" src="{{ $artist->photo ? $artist->photo->file : $artist->photoPlaceholder() }}" alt="{{ $artist->title }}"></td>
-                                    <th scope="col"><a href="{{ route('admin.artists.edit', $artist->id) }}">{{ $artist->initials . " / " . $artist->title }}</a></th>
+                                    <th scope="col"><a href="{{ route('admin.artists.edit', $artist->id) }}">{{ $artist->title }}</a></th>
 
                                     <td class="pr-0">
                                         {!! ($artist->category->parent ? ($artist->category->parent['name'])."/" : '').'<span class="text-dark">'.$artist->category->name.'</span>' !!}
-
-
-
                                     </td>
 
                                     <td class="pr-0"><span class="{{ $artist->status=='active' ? 'text-success' : 'text-danger' }}">
