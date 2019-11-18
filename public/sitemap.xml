@@ -9,122 +9,132 @@
 
 <url>
   <loc>https://gtmusikkbooking.com/</loc>
-  <lastmod>2019-07-15T14:45:42+00:00</lastmod>
+  <lastmod>2019-07-22T06:42:42+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://gtmusikkbooking.com/gruppe/bryllup</loc>
-  <lastmod>2019-07-15T14:45:42+00:00</lastmod>
+  <lastmod>2019-07-22T06:42:42+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://gtmusikkbooking.com/gruppe/dancearrangementer</loc>
-  <lastmod>2019-07-15T14:45:42+00:00</lastmod>
+  <lastmod>2019-07-22T06:42:42+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://gtmusikkbooking.com/gruppe/restaurantmusikere</loc>
-  <lastmod>2019-07-15T14:45:42+00:00</lastmod>
+  <lastmod>2019-07-22T06:42:42+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://gtmusikkbooking.com/gruppe/troubadoures</loc>
-  <lastmod>2019-07-15T14:45:42+00:00</lastmod>
+  <loc>https://gtmusikkbooking.com/gruppe/pianobarentertainere</loc>
+  <lastmod>2019-07-22T06:42:42+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://gtmusikkbooking.com/gruppe/pianobar</loc>
-  <lastmod>2019-07-15T14:45:42+00:00</lastmod>
+  <loc>https://gtmusikkbooking.com/gruppe/taffelmusikere</loc>
+  <lastmod>2019-07-22T06:42:42+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://gtmusikkbooking.com/gruppe/lobby-pianist</loc>
-  <lastmod>2019-07-15T14:45:42+00:00</lastmod>
+  <loc>https://gtmusikkbooking.com/gruppe/pubmusikere</loc>
+  <lastmod>2019-07-22T06:42:42+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://gtmusikkbooking.com/gruppe/countrymusikere</loc>
-  <lastmod>2019-07-15T14:45:42+00:00</lastmod>
+  <lastmod>2019-07-22T06:42:42+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://gtmusikkbooking.com/gruppe/pop-rock-musikere</loc>
-  <lastmod>2019-07-15T14:45:42+00:00</lastmod>
+  <lastmod>2019-07-22T06:42:42+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://gtmusikkbooking.com/gruppe/jazzmusikere</loc>
-  <lastmod>2019-07-15T14:45:42+00:00</lastmod>
+  <lastmod>2019-07-22T06:42:42+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://gtmusikkbooking.com/gruppe/klassisk-musikk</loc>
-  <lastmod>2019-07-15T14:45:42+00:00</lastmod>
+  <lastmod>2019-07-22T06:42:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gtmusikkbooking.com/gruppe/dj-karaoke</loc>
+  <lastmod>2019-07-22T06:42:42+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://gtmusikkbooking.com/gruppe/barneunderholdning</loc>
-  <lastmod>2019-07-15T14:45:42+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://gtmusikkbooking.com/gruppe/dj</loc>
-  <lastmod>2019-07-15T14:45:42+00:00</lastmod>
+  <lastmod>2019-07-22T06:42:42+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://gtmusikkbooking.com/gruppe/alle-typer-artister-m-m</loc>
-  <lastmod>2019-07-15T14:45:42+00:00</lastmod>
+  <lastmod>2019-07-22T06:42:42+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://gtmusikkbooking.com/login</loc>
-  <lastmod>2019-07-15T14:45:42+00:00</lastmod>
+  <lastmod>2019-07-22T06:42:42+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
+  <loc>https://gtmusikkbooking.com/artist/12</loc>
+  <lastmod>2019-07-22T06:42:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gtmusikkbooking.com/artist/21</loc>
+  <lastmod>2019-07-22T06:42:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
   <loc>https://gtmusikkbooking.com/artist/5</loc>
-  <lastmod>2019-07-15T14:45:42+00:00</lastmod>
+  <lastmod>2019-07-22T06:42:42+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://gtmusikkbooking.com/artist/17</loc>
-  <lastmod>2019-07-15T14:45:42+00:00</lastmod>
+  <lastmod>2019-07-22T06:42:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gtmusikkbooking.com/artist/22</loc>
+  <lastmod>2019-07-22T06:42:42+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://gtmusikkbooking.com/artist/15</loc>
-  <lastmod>2019-07-15T14:45:42+00:00</lastmod>
+  <lastmod>2019-07-22T06:42:42+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://gtmusikkbooking.com/artist/19</loc>
-  <lastmod>2019-07-15T14:45:42+00:00</lastmod>
+  <lastmod>2019-07-22T06:42:42+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://gtmusikkbooking.com/artist/14</loc>
-  <lastmod>2019-07-15T14:45:42+00:00</lastmod>
+  <lastmod>2019-07-22T06:42:42+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://gtmusikkbooking.com/artist/16</loc>
-  <lastmod>2019-07-15T14:45:42+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://gtmusikkbooking.com/artist/12</loc>
-  <lastmod>2019-07-15T14:45:42+00:00</lastmod>
+  <lastmod>2019-07-22T06:42:42+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://gtmusikkbooking.com/artist/13</loc>
-  <lastmod>2019-07-15T14:45:42+00:00</lastmod>
+  <lastmod>2019-07-22T06:42:42+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://gtmusikkbooking.com/artist/20</loc>
-  <lastmod>2019-07-15T14:45:42+00:00</lastmod>
+  <lastmod>2019-07-22T06:42:42+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 

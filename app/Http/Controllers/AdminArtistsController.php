@@ -84,9 +84,13 @@ class AdminArtistsController extends Controller
 
 //            return config('app.app_path_public', 'G.T.MUSIKKBOOKING DASHBOARD').'/images/'.$name; die;
 
+
             $resizeimage = Image::make(config('app.app_path_public').'/images/'.$name)->widen(1200, function ($constraint) {
                 $constraint->upsize();
-            })->text('G.T.MUSIKKBOOKING', 20, 20, function($font) {
+            });
+            $resizeimage->save();
+
+            $resizeimage->text('G.T.MUSIKKBOOKING', 20, (Image::make(config('app.app_path_public').'/images/'.$name)->height())-50, function($font) {
                 $font->file(config('app.app_path_public').'/front/fonts/Lato-Regular.ttf');
                 $font->size(24);
                 $font->color('#fdf6e3');
@@ -212,7 +216,10 @@ class AdminArtistsController extends Controller
 
             $resizeimage = Image::make(config('app.app_path_public').'/images/'.$name)->widen(1200, function ($constraint) {
                 $constraint->upsize();
-            })->text('G.T.MUSIKKBOOKING', 20, 20, function($font) {
+            });
+            $resizeimage->save();
+
+            $resizeimage->text('G.T.MUSIKKBOOKING', 20, (Image::make(config('app.app_path_public').'/images/'.$name)->height())-50, function($font) {
                 $font->file(config('app.app_path_public').'/front/fonts/Lato-Regular.ttf');
                 $font->size(24);
                 $font->color('#fdf6e3');
