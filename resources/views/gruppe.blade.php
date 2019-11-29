@@ -48,7 +48,9 @@
                         {{--</div>--}}
                     {{--</li><!--/.portfolio-item-->--}}
 
-                <li class="portfolio-item {{ $artist->category_id }} isotope-item col-md-4 hidden">
+                <li class="portfolio-item {{ $artist->category_id }} isotope-item col-md-4 @if($category->id==7)
+                        hidden
+                        @endif">
                     <div class="item-inner">
                         <img src="{{$artist->photo ? $artist->photo->file : $artist->frontPhotoPlaceholder()}}" alt="">
                         {{--<h5>{{ $artist->title }}</h5>--}}
