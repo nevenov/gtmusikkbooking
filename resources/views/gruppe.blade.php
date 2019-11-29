@@ -19,9 +19,14 @@
 
             @if(isset($subCategories) && count($subCategories)>0)
             <ul class="portfolio-filter fade-down center">
-                <li><a class="btn btn-outlined btn-primary active" href="#" data-filter="*">All</a></li>
+                {{--<li><a class="btn btn-outlined btn-primary active" href="#" data-filter="*">All</a></li>--}}
                 @foreach($subCategories as $subCategory)
                 <li><a class="btn btn-outlined btn-primary" href="#" data-filter=".{{ $subCategory->id }}">{{ $subCategory->name }}</a></li>
+
+                {{--<li><a class="btn btn-outlined btn-primary--}}
+                {{--@if($subCategory->id==18)--}}
+                    {{--active--}}
+                {{--@endif " href="/gruppe/restaurantmusikere">{{ $subCategory->name }}</a></li>--}}
                 @endforeach
             </ul><!--/#portfolio-filter-->
             @endif
@@ -43,7 +48,7 @@
                         {{--</div>--}}
                     {{--</li><!--/.portfolio-item-->--}}
 
-                <li class="portfolio-item {{ $artist->category_id }} isotope-item col-md-4">
+                <li class="portfolio-item {{ $artist->category_id }} isotope-item col-md-4 hidden">
                     <div class="item-inner">
                         <img src="{{$artist->photo ? $artist->photo->file : $artist->frontPhotoPlaceholder()}}" alt="">
                         {{--<h5>{{ $artist->title }}</h5>--}}

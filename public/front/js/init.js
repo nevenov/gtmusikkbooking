@@ -11,6 +11,9 @@ $(window).load(function(){
       layoutMode : 'fitRows'
     });
     portfolio_selectors.on('click', function(){
+
+      $('.portfolio-item').removeClass('hidden');
+
       portfolio_selectors.removeClass('active');
       $(this).addClass('active');
       var selector = $(this).attr('data-filter');
