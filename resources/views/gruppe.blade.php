@@ -15,6 +15,9 @@
                 <h2 class="main-title">{{ $category->name }}</h2>
                 <hr>
                 <p>Lytt til en artist, lytt til hans demonstrasjon og ring oss:</p>
+                @if(isset($subCategories) && count($subCategories)>0)
+                    <div style="padding: 12px 30px; margin-top: 10px; color: white; background-color: #0c85d0; display: inline-block;"> -- VELG ØNSKET ARTISTER KATEGORI / GRUPPE OG LYTT DEMO -- </div>
+                @endif
             </div>
 
             @if(isset($subCategories) && count($subCategories)>0)
