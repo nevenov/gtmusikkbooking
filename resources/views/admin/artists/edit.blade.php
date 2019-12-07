@@ -74,9 +74,22 @@
 
 
                                 <div class="form-row pb-4">
-                                    <div class="form-group col-lg-6">
+                                    <div class="form-group col-lg-5">
                                         <label class="form-control-label" for="input-title">{{ __('Име') }}</label>
                                         <input type="text" name="title" id="input-title" class="form-control" value="{{ $artist->title }}" placeholder="{{ __('Име на артиста') }}" required autofocus>
+                                    </div>
+
+                                    <div class="form-group col-md-3 offset-md-1">
+                                        <label class="form-control-label" for="created_at">{{ __('Дата') }}</label>
+                                        <a href="javascript:NewCssCal('created_at','yyyyMMdd','dropdown',true,'24',true)"><input type="text" name="created_at" id="created_at" class="form-control" value="{{ $artist->created_at }}"> </a>
+
+                                    </div>
+                                    <div class="form-group col-md-1">
+                                        <label class="form-control-label" for="pickerimg">{{ __('Избери') }}</label>
+                                        <div>
+                                            <a id="pickerimg" href="javascript:NewCssCal('created_at','yyyyMMdd','dropdown',true,'24',true)"><img src="{{ asset('argon') }}/js/datetimepicker/cal.gif" width="16" height="16" alt="Pick a date" border="0" ></a>
+                                        </div>
+
                                     </div>
 
                                     {{--<div class="form-group col-md-3">--}}

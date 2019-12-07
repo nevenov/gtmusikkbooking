@@ -48,10 +48,10 @@ class FrontCategoriesController extends Controller
 //            $artists = $category->artists()->whereIn('category_id', $cat_ids)->where('status', 'active')->get();
             $subCategories = Category::whereIn('id', $subCatArr)->get();
 //            $oneManCat = Category::whereIn('id', 18)->get();
-            $artists = Artist::whereIn('category_id', $cat_ids)->where('status', 'active')->orderBy('updated_at', 'desc')->get();
+            $artists = Artist::whereIn('category_id', $cat_ids)->where('status', 'active')->orderBy('created_at', 'asc')->get();
 
         } else {
-            $artists = $category->artists()->where('status', 'active')->orderBy('updated_at', 'desc')->get();
+            $artists = $category->artists()->where('status', 'active')->orderBy('created_at', 'asc')->get();
         }
 
 //        dd($subCategories); die;

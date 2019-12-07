@@ -32,7 +32,8 @@ class Artist extends Model
         'video3',
         'reference1',
         'reference2',
-        'reference3'
+        'reference3',
+        'created_at'
     ];
 
 
