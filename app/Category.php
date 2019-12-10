@@ -13,7 +13,13 @@ class Category extends Model
     use SluggableScopeHelpers;
 
 
-    protected $fillable = ['parent_id', 'name', 'photo_id', 'position'];
+    protected $fillable = [
+        'parent_id',
+        'name',
+        'photo_id',
+        'position',
+        'created_at'
+    ];
 
 
     public function sluggable()
