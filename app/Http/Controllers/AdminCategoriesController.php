@@ -16,7 +16,7 @@ class AdminCategoriesController extends Controller
     public function index()
     {
         //
-        $categories = Category::orderBy('created_at', 'asc')->paginate(20);
+        $categories = Category::orderBy('created_at', 'asc')->paginate(25);
         return view('admin.categories.index', compact('categories'));
     }
 
@@ -117,7 +117,9 @@ class AdminCategoriesController extends Controller
 
             if($category->photo) {
 
-                unlink(config('app.app_path_public') . $category->photo->file);
+                if(file_exists(config('app.app_path_public') . $category->photo->file)) {
+                    unlink(config('app.app_path_public') . $category->photo->file);
+                }
 
                 $category->photo->update(['file'=>$name]);
 
@@ -152,7 +154,10 @@ class AdminCategoriesController extends Controller
         $category = Category::findOrFail($id);
 
         if($category->photo){
-            unlink(config('app.app_path_public') . $category->photo->file);
+
+            if(file_exists(config('app.app_path_public') . $category->photo->file)) {
+                unlink(config('app.app_path_public') . $category->photo->file);
+            }
 
             $photo = Photo::findOrFail($category->photo_id);
 

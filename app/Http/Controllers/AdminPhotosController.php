@@ -20,7 +20,7 @@ class AdminPhotosController extends Controller
         //
         $artist = Artist::findOrFail($id);
 
-        if($artist->photo){
+        if ($artist->photo) {
             unlink(config('app.app_path_public') . $artist->photo->file);
         }
 
@@ -35,11 +35,15 @@ class AdminPhotosController extends Controller
         //
         $category = Category::findOrFail($id);
 
-        if($category->photo){
+        if ($category->photo) {
+            $category->photo->delete();
+        }
+
+        if (file_exists(config('app.app_path_public') . $category->photo->file)) {
             unlink(config('app.app_path_public') . $category->photo->file);
         }
 
-        $category->photo->delete();
+
 
         return back()->with('status', 'Снимката на групата е изтрита успешно. ');
     }
