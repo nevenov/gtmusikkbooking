@@ -54,9 +54,8 @@
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="{{ url('/') }}#single-page-slider">Hjem</a></li>
-                <li><a href="{{ url('/') }}#about-us">Om oss</a></li>
                 <li><a href="{{ url('/') }}#artists">Artister</a></li>
+                <li><a href="{{ url('/') }}#about-us">Om oss</a></li>
                 <li><a href="{{ url('/') }}#contact">Kontakt oss</a></li>
             </ul>
         </div>
