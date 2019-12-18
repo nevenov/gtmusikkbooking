@@ -26,6 +26,9 @@ Route::get('/gruppe/{id}', 'FrontCategoriesController@show')->name('gruppe.name'
 
 Route::get('artist/{id}', ['as'=>'artist.show', 'uses'=>'FrontArtistsController@show']);
 
+Route::view('/om-oss', 'aboutus');
+
+Route::view('/contacts', 'contacts');
 
 Route::post('contact', 'ContactFormController@store');
 
