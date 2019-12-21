@@ -32,7 +32,14 @@
                                 </div>
                                 <div class="team-content fade-up">
                                     <h5><a href="/gruppe/{{ $category->slug }}">{{ $category->name }}</a>
-                                        <small class="role muted"><br><a href="/gruppe/{{ $category->slug }}">Se artister</a></small>
+                                        <small class="role muted">
+                                            <br><a href="/gruppe/{{ $category->slug }}">
+                                                @if($category->slug=='utleie-lyd-og-lysutstyr' || $category->slug=='event-lyd-og-lys')
+                                                    Se mer
+                                                @else
+                                                    Se artister
+                                                @endif
+                                            </a></small>
                                     </h5>
 
                                 </div>
