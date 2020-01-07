@@ -72,7 +72,7 @@
                             <div class="carousel-content center centered">
                                 <span class="home-icon pe-7s-gleam bounce-in"></span>
                                 <h2 class="boxed animation animated-item-1 fade-down">VELKOMMEN TIL G.T.MUSIKKBOOKING ARTISTER AGENTUR</h2>
-                                <p class="boxed animation animated-item-2 fade-up">Våre eksperter vil finne den beste musikken for deg til suksess.</p>
+                                <p class="boxed animation animated-item-2 fade-up">Vi kan bidra med gode løsninger for både musikere / artister og arrangører til alle typer arrangementer. </p>
                             </div>
                         </div>
                     </div>

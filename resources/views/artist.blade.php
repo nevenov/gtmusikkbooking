@@ -60,7 +60,7 @@
                                     @if(isset($artist->audio2) && $artist->audio2!='/audio/')
                                         <div class="col-md-6">
                                             <div class="row">
-                                                <div class="col-md-2 audio-div audio-div-demo">DEMO:</div>
+                                                <div class="col-md-2 audio-div audio-div-demo">DEMO&nbsp2:</div>
                                                 <div class="col-md-10 audio-div">
                                                     <audio controls class="audio-player">
                                                         <source src="{{ $artist->audio2 }}" type="audio/mpeg">
