@@ -12,7 +12,7 @@
             <div class="gap"></div>
 
             <div class="center gap fade-down section-heading">
-                <h2 class="main-title">~ Artister ~</h2>
+                <h2 class="main-title">~ ARTISTER / ARRANGEMENTER ~</h2>
                 <hr>
                 <p>Velg ønsket artister kategori/gruppe:</p>
             </div>
@@ -34,7 +34,7 @@
                                     <h5><a href="/gruppe/{{ $category->slug }}">{{ $category->name }}</a>
                                         <small class="role muted">
                                             <br><a href="/gruppe/{{ $category->slug }}">
-                                                @if($category->slug=='utleie-lyd-og-lysutstyr' || $category->slug=='event-lyd-og-lys')
+                                                @if($category->slug=='utleie-lyd-og-lysutstyr' || $category->slug=='event-lyd-og-lys' || $category->slug=='dancearrangementer' || $category->slug=='kurs-og-konferanser' || $category->slug=='baatsharter' || $category->slug=='nightliner')
                                                     Se mer
                                                 @else
                                                     Se artister
