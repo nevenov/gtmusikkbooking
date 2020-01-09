@@ -443,7 +443,7 @@ blockquote {
 }
 
 .portfolio-item:hover .overlay {
-    opacity: 1;
+    opacity: 0.2;
 }
 
 
@@ -1034,7 +1034,7 @@ ul.tag-cloud li {
 }
 
 .team-image:hover .overlay {
-    opacity: 1;
+    opacity: 0.2;
 }
 
 
@@ -2416,6 +2416,7 @@ div.under-about-us {
 
 ul.about-us-list {
     margin-bottom: 0;
+    padding-left: 18px;
 }
 ul.about-us-list li {
     list-style-type: circle;

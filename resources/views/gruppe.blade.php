@@ -14,7 +14,13 @@
             <div class="center gap fade-down section-heading">
                 <h2 class="main-title">{{ $category->name }}</h2>
                 <hr>
-                <p>Lytt til en artist, lytt til hans demonstrasjon og ring oss:</p>
+                <p>
+                    @if($category->slug=='utleie-lyd-og-lysutstyr' || $category->slug=='event-lyd-og-lys' || $category->slug=='dancearrangementer' || $category->slug=='kurs-og-konferanser' || $category->slug=='baatsharter' || $category->slug=='nightliner')
+                        &nbsp;
+                    @else
+                        Lytt til en artist, lytt til hans demonstrasjon og ring oss:
+                    @endif
+                </p>
                 @if(isset($subCategories) && count($subCategories)>0)
                     <div style="padding: 12px 30px; margin-top: 10px; color: white; background-color: #0c85d0; display: inline-block;"> -- VELG ØNSKET ARTISTER KATEGORI / GRUPPE OG LYTT DEMO -- </div>
                 @endif
