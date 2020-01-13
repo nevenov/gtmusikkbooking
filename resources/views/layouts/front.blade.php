@@ -54,7 +54,7 @@
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="{{ url('/') }}#artists">Artister</a></li>
+                <li><a href="{{ url('/') }}#artists">Artister / Arrangementer</a></li>
                 <li><a href="{{ url('/') }}/om-oss#about-us">Om oss</a></li>
                 <li><a href="{{ url('/') }}/contacts#contact">Kontakt oss</a></li>
             </ul>

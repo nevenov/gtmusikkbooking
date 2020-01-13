@@ -1437,7 +1437,7 @@ ul.social > li > a:hover {
 }
 
 .blog-featured-image:hover .overlay {
-    opacity: 1;
+    opacity: 0.2;
 }
 
 ul.pagination > li > a {
