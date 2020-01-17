@@ -66,9 +66,9 @@
                                                     @csrf
                                                     @method('delete')
                                                     <a class="dropdown-item" href="{{ route('admin.categories.edit', $category->id) }}">{{ __('Edit') }}</a>
-                                                    <button type="button" class="dropdown-item" onclick="confirm('{{ __("Сигурен ли сте, че искате да изтриете тази група?") }}') ? this.parentElement.submit() : ''">
-                                                        {{ __('Delete') }}
-                                                    </button>
+                                                    {{--<button type="button" class="dropdown-item" onclick="confirm('{{ __("Сигурен ли сте, че искате да изтриете тази група?") }}') ? this.parentElement.submit() : ''">--}}
+                                                        {{--{{ __('Delete') }}--}}
+                                                    {{--</button>--}}
                                                 </form>
 
                                             </div>
