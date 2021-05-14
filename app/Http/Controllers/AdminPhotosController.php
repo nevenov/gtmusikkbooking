@@ -21,10 +21,16 @@ class AdminPhotosController extends Controller
         $artist = Artist::findOrFail($id);
 
         if ($artist->photo) {
-            unlink(config('app.app_path_public') . $artist->photo->file);
+//            unlink(config('app.app_path_public') . $artist->photo->file);
+            if(file_exists(public_path($artist->photo->file))) {
+                unlink(public_path($artist->photo->file));
+            }
         }
 
-        $artist->photo->delete();
+//        $artist->photo->delete();
+        if ($artist->photo != null) {
+            $artist->photo->delete();
+        }
 
         return back()->with('status', 'Снимката на артиста е изтрита успешно. ');
     }

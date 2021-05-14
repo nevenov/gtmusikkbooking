@@ -61,8 +61,8 @@ class AdminArtistsController extends Controller
 
         $request->validate([
             'photo_id' => 'mimes:jpeg,png,jpg,gif',
-            'audio_id' => 'mimes:mpga,wav',
-            'audio2' => 'mimes:mpga,wav',
+            'audio_id' => 'mimes:mpga,wav,mp3',
+            'audio2' => 'mimes:mpga,wav,mp3',
 
         ]);
 
@@ -179,8 +179,8 @@ class AdminArtistsController extends Controller
 
         $request->validate([
             'photo_id' => 'mimes:jpeg,png,jpg,gif',
-            'audio_id' => 'mimes:mpga,wav',
-            'audio2' => 'mimes:mpga,wav',
+            'audio_id' => 'mimes:mpga,wav,mp3',
+            'audio2' => 'mimes:mpga,wav,mp3',
 
         ]);
 
@@ -241,7 +241,10 @@ class AdminArtistsController extends Controller
 
             if(isset($artist->audio_id) && $artist->audio_id!='/audio/') {
 
-                unlink(config('app.app_path_public') . $artist->audio_id);
+//                unlink(config('app.app_path_public') . $artist->audio_id);
+                if(file_exists(public_path($artist->audio_id))) {
+                    unlink(public_path($artist->audio_id));
+                }
 
                 //$artist->audio->update(['file'=>$name]);
 
@@ -263,7 +266,10 @@ class AdminArtistsController extends Controller
 
             if(isset($artist->audio2) && $artist->audio2!='/audio/') {
 
-                unlink(config('app.app_path_public') . $artist->audio2);
+//                unlink(config('app.app_path_public') . $artist->audio2);
+                if(file_exists(public_path($artist->audio2))) {
+                    unlink(public_path($artist->audio2));
+                }
 
 //                $artist->audio2->update(['file'=>$name2]);
 //
@@ -304,11 +310,17 @@ class AdminArtistsController extends Controller
 
 
         if(isset($artist->audio_id) && $artist->audio_id!='/audio/'){
-            unlink(config('app.app_path_public') . $artist->audio_id);
+//            unlink(config('app.app_path_public') . $artist->audio_id);
+            if(file_exists(public_path($artist->audio_id))) {
+                unlink(public_path($artist->audio_id));
+            }
         }
 
         if(isset($artist->audio2) && $artist->audio2!='/audio/'){
-            unlink(config('app.app_path_public') . $artist->audio2);
+//            unlink(config('app.app_path_public') . $artist->audio2);
+            if(file_exists(public_path($artist->audio2))) {
+                unlink(public_path($artist->audio2));
+            }
         }
 
 

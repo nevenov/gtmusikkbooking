@@ -20,7 +20,10 @@ class AdminAudiosController extends Controller
         $artist = Artist::findOrFail($id);
 
         if(isset($artist->audio_id) && $artist->audio_id!='/audio/'){
-            unlink(config('app.app_path_public') . $artist->audio_id);
+//            unlink(config('app.app_path_public') . $artist->audio_id);
+            if(file_exists(public_path($artist->audio_id))) {
+                unlink(public_path($artist->audio_id));
+            }
         }
 
         $artist->audio_id = NULL;
@@ -36,7 +39,10 @@ class AdminAudiosController extends Controller
         $artist = Artist::findOrFail($id);
 
         if(isset($artist->audio2) && $artist->audio2!='/audio/'){
-            unlink(config('app.app_path_public') . $artist->audio2);
+//            unlink(config('app.app_path_public') . $artist->audio2);
+            if(file_exists(public_path($artist->audio2))) {
+                unlink(public_path($artist->audio2));
+            }
         }
 
         $artist->audio2 = NULL;
